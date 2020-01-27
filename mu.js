@@ -36,7 +36,12 @@ o.map2flg=(map,flgsymbol)=>{
  return map.map(d=>d.map(d=>d==flgsymbol?1:0))
 }
 o.ispos=(map,x,y)=>{
- try{return map[y][x],true}catch(e){return false}
+ try{
+  if(x>map[0].length-1)return false;
+  return map[y][x],true
+ }catch(e){
+  return false
+ }
 }
 o.setpos=(map,x,y,symbol)=>{
  if(o.ispos(map,x,y))map[y][x]=symbol
