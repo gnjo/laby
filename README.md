@@ -18,6 +18,22 @@ o.pmap[0...9]=[[x,y],[x,y]...] //o.pmap[1]=[[x,y],[x,y]...] //road on door point
 o.smap="" //strings map
 ```
 ```
+
+ispos(x,y,map) //pos is safe?
+getpos(x,y,map) //getpos
+setpos(symbol,x,y,map)
+joinmap(basemap,addmap,'R|D')
+
+let h0=joinmap(m0,m1,'R')
+,h1=joinmap(m2,m3,'R')
+,h2=joinmap(m4,m5,'R')
+,h3=joinmap(m6,m7,'R')
+,x=joinmap(h0,h1,'D')
+;
+x=joinmap(x,h2,'D')
+x=joinmap(x,h3,'D')
+
+
 joinlist=[//0-7
 {sx,sy,ex,ey},...
 ]
