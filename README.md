@@ -14,7 +14,8 @@ autowalk(map,x,y,cp,i,limit){
  if([x,y]===cp[i])return autowalk(map,x,y,cp,i++,limit);
  let v=mu.vec(x,y,cp[i][0],cp[i][1])
  ,b=shuffle(("NEWS"+v+v).split(''),rand).pop()
- ,p=mu.iswalk(map,x,y,b)?mu.walk(map,x,y,b):[x,y]
+ ,dv=mu.dvec(b)
+ ,p=mu.iswalk(map,x,y,b)?[x+dv[0],y+dv[1]]:[x,y]
  ;
  mu.setpos(map,p[0],p[1],"1")
  return autowalk(map,p[0],p[1],cp,i,limit++)
