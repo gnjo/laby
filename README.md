@@ -24,15 +24,6 @@ getpos(x,y,map) //getpos
 setpos(symbol,x,y,map)
 joinmap(basemap,addmap,'R|D')
 
-let h0=joinmap(m0,m1,'R')
-,h1=joinmap(m2,m3,'R')
-,h2=joinmap(m4,m5,'R')
-,h3=joinmap(m6,m7,'R')
-,x=joinmap(h0,h1,'D')
-;
-x=joinmap(x,h2,'D')
-x=joinmap(x,h3,'D')
-
 
 joinlist=[//0-7
 {sx,sy,ex,ey},...
@@ -44,27 +35,17 @@ joinlist.map(d=>{
 ```
 ```
 //doorable
-(x-1,y-1)&&(x+1,y-1)&&()
-(x,y-1)&&(x,y)&&(x,y+1) === road ||
--o-
--x-
--o-
-
-
-
-(x-1,y)&&(x,y)&&(x+1,y) === road 
-
----
-oxo
----
-
-
 -o-
 oxo
 -o-
 
-getdoorablelist=(m)=>{ //m[][]
-}
+000
+1*1
+000
+
+010
+0*0
+010
 
 ```
 ```
