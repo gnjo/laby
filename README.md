@@ -10,15 +10,13 @@ labyrinth maker
 a->b->c->d
 
 autowalk(map,x,y,cp,i,limit){
- if(limit>500)return map;
- limit++;
- if(!cp[i])return map;
- if(x===cp[i][0]&&y===cp[i][1])return i++,autowalk(map,x,y,cp,i,limit);
+ if(limit>500||!cp[i])return map;
+ if([x,y]===cp[i])return autowalk(map,x,y,cp,i++,limit);
  let v=vec(x,y,cp[i][0],cp[i][1])
  ,b=shuffle(("NEWS"+v+v).split(''),rand).pop()
  ,p=mu.iswalk(x,y,b)?mu.walk(x,y,b):[x,y]
  ;
- return autowalk(map,p[0],p[1],cp,i,limit)
+ return autowalk(map,p[0],p[1],cp,i,limit++)
 }
 
 ```
