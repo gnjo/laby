@@ -5,7 +5,7 @@ labyrinth maker
 1:road all
 2:road on stairs 5 only. 00 03 12 15 06
 3:road on doors
-4:road on other
+4:road on treasure 5 to 20
 5:road on other
 6...9:road on other
 
