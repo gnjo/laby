@@ -36,11 +36,19 @@ oxo
 //system
 20*10 * 8box = 40*40
 doors range 3-7
-
 |00|01|
 |02|03|
 |04|05|
 |06|07|
+
+join point
+|00|a|01|
+ b  - c
+|02|d|03|
+ e  - f
+|04|g|05|
+ h  -  i
+|06|j|07|
 L-R to U-D
 if 00, join point 2 00>01,00>02
 
