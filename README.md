@@ -18,22 +18,6 @@ o.pmap[0...9]=[[x,y],[x,y]...] //o.pmap[1]=[[x,y],[x,y]...] //road on door point
 o.smap="" //strings map
 ```
 ```
-
-ispos(x,y,map) //pos is safe?
-getpos(x,y,map) //getpos
-setpos(symbol,x,y,map)
-joinmap(basemap,addmap,'R|D')
-
-
-joinlist=[//0-7
-{sx,sy,ex,ey},...
-]
-let joinlist=makejoinlist()
-joinlist.map(d=>{
- minimap(d.sx,d.sy,d.ex,d.ey) //20*10
-}
-```
-```
 //doorable
 -o-
 oxo
@@ -59,11 +43,14 @@ doors range 3-7
 |06|07|
 L-R to U-D
 if 00, join point 2 00>01,00>02
-//00,03,12,15
-LRUD
-joinmap={
-  '00':'RD','01':'LD'
+
+offset=[
+ [0,20*0],[20,20*0]
+,[0,20*1],[20,20*1]
+,[0,20*2],[20,20*2]
+,[0,20*3],[20,20*3]
 }
+
 ```
 
 ```js
