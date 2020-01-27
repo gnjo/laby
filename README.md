@@ -1,20 +1,20 @@
 # roadjoin
 labyrinth maker
 ```
-0:wall
-1:ground on door
-2:ground on stairs 2 only.
-3:ground on other
-4:ground on other
-5:ground on other
-6...9:ground on other
+0:wall all
+1:road all
+2:road on stairs 5 only. 00 03 12 15 06
+3:road on doors
+4:road on other
+5:road on other
+6...9:road on other
 
 roadjoin.rand=Math.random();/*number fix random*/
 let o=roadjoin.done(seed)
 o.w=40
 o.h=40
 o.map[40][40]
-o.pmap[0...9]=[[x,y],[x,y]...] //o.pmap[1]=[[x,y],[x,y]...] //ground on door points
+o.pmap[0...9]=[[x,y],[x,y]...] //o.pmap[1]=[[x,y],[x,y]...] //road on door points
 o.smap="" //strings map
 ```
 
