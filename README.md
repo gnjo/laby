@@ -12,7 +12,7 @@ a->b->c->d
 autowalk(map,x,y,cp,i,limit){
  if(limit>500||!cp[i])return map;
  if([x,y]===cp[i])return autowalk(map,x,y,cp,i++,limit);
- let v=vec(x,y,cp[i][0],cp[i][1])
+ let v=mu.vec(x,y,cp[i][0],cp[i][1])
  ,b=shuffle(("NEWS"+v+v).split(''),rand).pop()
  ,p=mu.iswalk(map,x,y,b)?mu.walk(map,x,y,b):[x,y]
  ;
