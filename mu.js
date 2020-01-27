@@ -53,6 +53,18 @@ o.vec=(cx,cy,tx,ty)=>{
    if(v<=-45&&v>-135)return "S"
    return "W" //other W
 }
+o.dvec=(b)=>{
+ if(b==="N") return [0,-1]
+ if(b==="E") return [1,0]
+ if(b==="W") return [-1,0]
+ if(b==="S") return [0,1]
+ return [0,0]
+}
+o.iswalk=(map,x,y,b)=>{
+ let dv=o.dvec(b)
+ return o.ispos(map,x+dv[0],y+dv[1])
+}
+
 
  root.mu=o; //maputil
  /*
