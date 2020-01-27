@@ -37,6 +37,7 @@ o.map2flg=(map,flgsymbol)=>{
 }
 o.ispos=(map,x,y)=>{
  try{
+  if(x<0)return false;
   if(x>map[0].length-1)return false;
   return map[y][x],true
  }catch(e){
