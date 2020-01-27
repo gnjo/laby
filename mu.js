@@ -45,6 +45,15 @@ o.setpos=(map,x,y,symbol)=>{
 o.getpos=(map,x,y)=>{
  return o.ispos(map,x,y)?map[y][x]:void 0
 }
+o.vec=(cx,cy,tx,ty)=>{
+  let dx=tx-cx,dy=ty-cy
+  let v=Math.atan2(-1*dy, dx) * 180 / Math.PI;
+   if(v<=135&&v>45)return "N"
+   if(v<=45&&v>-45)return "E"
+   if(v<=-45&&v>-135)return "S"
+   return "W" //other W
+}
+
  root.mu=o; //maputil
  /*
 let a=mu.genmap(40,40,"0")
