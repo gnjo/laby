@@ -86,6 +86,13 @@ offset=[
 ```js
 //xorshift
 ;(function(root){
+function shuffle(a,random){
+ let r,t,i,b=[].concat(a)
+ for(i=b.length-1;i>0;i--) r=random()% (i+1),t=b[i],b[i] = b[r],b[r] = t
+ ;
+ return b;
+}
+
  /*xorshift
 let seed=888
 let random=xrand(seed)
@@ -102,5 +109,7 @@ console.log(a)
   }
  }
  root.xrand=entry
+ root.shuffle=shuffle
 })(this);
+
 ```
