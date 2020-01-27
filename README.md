@@ -44,21 +44,24 @@ joinlist.map(d=>{
 ```
 ```
 //doorable
+(x-1,y-1)&&(x+1,y-1)&&()
 (x,y-1)&&(x,y)&&(x,y+1) === road ||
-(x-1,y)&&(x,y)&&(x+1,y) === road 
-
--o-
-oxo
--o-
-
 -o-
 -x-
 -o-
 
+
+
+(x-1,y)&&(x,y)&&(x+1,y) === road 
+
 ---
 oxo
 ---
 
+
+-o-
+oxo
+-o-
 
 getdoorablelist=(m)=>{ //m[][]
 }
