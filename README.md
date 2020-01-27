@@ -16,6 +16,7 @@ autowalk(map,x,y,cp,i,limit){
  ,b=shuffle(("NEWS"+v+v).split(''),rand).pop()
  ,p=mu.iswalk(map,x,y,b)?mu.walk(map,x,y,b):[x,y]
  ;
+ mu.setpos(map,p[0],p[1],"1")
  return autowalk(map,p[0],p[1],cp,i,limit++)
 }
 
