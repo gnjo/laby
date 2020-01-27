@@ -9,6 +9,23 @@ labyrinth maker
 ６．チェックポイントに到達するまで続ける。
 a->b->c->d
 
+autowalk(map,x,y,cp,i,limit){
+ if(limit>500)return map;
+ limit++;
+ if(!cp[i])return map;
+ let tx=cp[i][0],ty=cp[i][1]
+ ,v=vec(x,y,tx,ty)
+ ,a=("NEWS"+v+v).split('')
+ ,b=shuffle(a,rand)
+ ,flg=mu.iswalk(x,y,b)
+ ;
+ if(!flg)return autowalk(map,x,y,cp,i,limit)
+ let p=mu.walk(x,y,b)
+ if(tx===p[0]&&ty===p[1])i++;
+ x=p[0],y=p[1]
+ return autowalk(map,x,y,cp,i,limit)
+}
+
 ```
 ```
 0:wall all
