@@ -3,7 +3,7 @@ labyrinth maker
 ```
 0:wall all
 1:road all
-2:road on stairs 5 only. 00 03 12 15 06
+2:road on stairs 4 only. 00 01 06 07
 3:road on doors
 4:road on treasure 5 to 20
 5:road on other
@@ -17,15 +17,53 @@ o.map[40][40]
 o.pmap[0...9]=[[x,y],[x,y]...] //o.pmap[1]=[[x,y],[x,y]...] //road on door points
 o.smap="" //strings map
 ```
+```
+joinlist=[//0-7
+{sx,sy,ex,ey},...
+]
+let joinlist=makejoinlist()
+joinlist.map(d=>{
+ minimap(d.sx,d.sy,d.ex,d.ey) //20*10
+}
+```
+```
+//doorable
+(x,y-1)&&(x,y)&&(x,y+1) === road ||
+(x-1,y)&&(x,y)&&(x+1,y) === road 
+
+-o-
+oxo
+-o-
+
+-o-
+-x-
+-o-
+
+---
+oxo
+---
+
+
+getdoorablelist=(m)=>{ //m[][]
+}
 
 ```
+```
 //system
-10*10 * 16box = 40*40
+20*10 * 8box = 40*40
+doors range 3-7
 
-|00|01|02|03|
-|04|05|06|07|
-|08|09|10|11|
-|12|13|14|15|
+|00|01|
+|02|03|
+|04|05|
+|06|07|
+L-R to U-D
+if 00, join point 2 00>01,00>02
+//00,03,12,15
+LRUD
+joinmap={
+  '00':'RD','01':'LD'
+}
 ```
 
 ```js
