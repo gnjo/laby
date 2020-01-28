@@ -14,6 +14,20 @@ getnearpoint(map,cx,cy,targetsymbol,min){
  return [nx,ny]
 }
 
+getroompoint(map,rand,max){
+ let t55=mu.genmap(5,5,"0"),t75=mu.genmap(7,5,"0")
+ ,h=map.length-1,w=map[0].length-1,found=0
+ ,x,y,type
+ ;max=max||100;
+ for(let i=0;i<max;i++){
+  x=rand(0,w),y=rand(0,h)
+  if(mu.samemap(map,t75,x,y)){found=1;type=75;break}
+  if(mu.samemap(map,t55,x,y)){found=1;type=55;break}
+ }
+ return found?[x,y,type]:void 0
+ //return [x,y,type] //type is 55 or 75
+}
+
 ```
 
 ```
