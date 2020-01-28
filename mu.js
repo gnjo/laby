@@ -35,6 +35,17 @@ o.map2str=(map)=>{
 o.map2flg=(map,flgsymbol)=>{
  return map.map(d=>d.map(d=>d==flgsymbol?1:0))
 }
+
+o.isrange=(min,x,max)=>{
+ let wk=min
+ if(min>max) min=max,max=wk;
+ return (min<=x&&x<=max)
+}
+o.ispos=(map,x,y)=>{
+ return o.isrange(0,x,map[0].length-1)&&o.isrange(0,y,map.length-1)
+}
+
+/*
 o.ispos=(map,x,y)=>{
  try{
   if(x<0)return false;
@@ -44,6 +55,7 @@ o.ispos=(map,x,y)=>{
   return false
  }
 }
+*/
 o.setpos=(map,x,y,symbol)=>{
  if(o.ispos(map,x,y))map[y][x]=symbol
  return map;
