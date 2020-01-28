@@ -9,8 +9,8 @@ o.genmap=(w,h,symbol)=>{
 }
 o.mapjoin=(a,b,jx,jy)=>{
  let j=a,h=b.length,w=b[0].length
- for(let y=jy;y<jy+h;y++)
-  for(let x=jx;x<jx+w;x++)
+ for(let y=jy;y<h-jy;y++)
+  for(let x=jx;x<w-jx;x++)
    a[y][x]=b[ y-jy ][ x-jx ]
  return j;
 }
