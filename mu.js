@@ -8,11 +8,11 @@ o.genmap=(w,h,symbol)=>{
  return Array(w*h+1).join(symbol).match(new RegExp(".{"+w+"}","g")).map(d=>d.split(''))
 }
 o.mapjoin=(a,b,jx,jy)=>{
- let j=a,h=b.length,w=b[0].length
+ let h=b.length,w=b[0].length
  for(let y=jy;y<jy+h;y++)
   for(let x=jx;x<jx+w;x++)
    a[y][x]=b[ y-jy ][ x-jx ]
- return j;
+ return a;
 }
 o.samemap=(a,b,jx,jy,cflg)=>{
  //* is wildcard,cflg is jx,jy is center. odd number only.
