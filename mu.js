@@ -20,8 +20,8 @@ o.samemap=(a,b,jx,jy,cflg)=>{
  ,ox=cflg?Math.floor(w/2):0,oy=cflg?Math.floor(h/2):0
  ;
  jx=jx-ox,jy=jy-oy
- for(let y=jy;y<jy+h;y++)
-  for(let x=jx;x<jx+w;x++)
+ for(let y=jy;y<h-jy;y++)
+  for(let x=jx;x<w-jx;x++)
    if( (!o.ispos(a,x,y)) || (b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=0;break}
  return same;
 }
