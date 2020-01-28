@@ -9,7 +9,7 @@ joinwalk(map,sx,sy,ex,ey,donts,finerate,rand)
 getmesure(sx,sy,ex,ey){
  return (sx-ex)^2+(sy-ey)^2
 }
-getnearpoint(map,cx,cy,targetsymbol){
+getnearpoint(map,cx,cy,targetsymbol,min){
 
  return [nx,ny]
 }
