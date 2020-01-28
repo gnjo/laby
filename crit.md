@@ -2,7 +2,7 @@
 
 ```
 let looper=(ev,cr)=>{
- //ev.t:topmessage, ev.c:centermessage, ev.b:bottommessage, ev.mode:sel or mes, ev.trick:count by fps 
+ //ev.t:topmessage, ev.c:centermessage, ev.b:bottommessage, ev.mode:sel or mes, ev.tick:count by fps 
  cr.keyin('') //<>^v ABXYLR
  //cr.keyflash() //use system
 }
