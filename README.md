@@ -6,6 +6,13 @@ labyrinth maker
 joinwalk(map,sx,sy,ex,ey,donts,finerate,rand)
 
 部屋の扉の縦横列のみを走査し、最も近い点を見つける。その方向を扉とする。
+getmesure(sx,sy,ex,ey){
+ return (sx-ex)^2+(sy-ey)^2
+}
+getnearpoint(map,cx,cy,targetsymbol){
+
+ return [nx,ny]
+}
 
 ```
 
