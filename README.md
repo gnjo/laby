@@ -5,6 +5,8 @@ labyrinth maker
 
 joinwalk(map,sx,sy,ex,ey,donts,finerate,rand)
 
+部屋の扉の縦横列のみを走査し、最も近い点を見つける。その方向を扉とする。
+
 ```
 
 ```
