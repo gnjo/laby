@@ -1,5 +1,12 @@
 # roadjoin
 labyrinth maker
+
+```
+
+joinwalk(map,sx,sy,ex,ey,donts,finerate,rand)
+
+```
+
 ```
 //checkpoint pattern
 N:[[0,39],[0,0],[39,39],[39,0]]
