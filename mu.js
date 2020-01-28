@@ -9,8 +9,8 @@ o.genmap=(w,h,symbol)=>{
 }
 o.mapjoin=(a,b,jx,jy)=>{
  let j=a,h=b.length,w=b[0].length
- for(let y=jy;y<h-jy;y++)
-  for(let x=jx;x<w-jx;x++)
+ for(let y=jy;y<jy+h;y++)
+  for(let x=jx;x<jx+w;x++)
    a[y][x]=b[ y-jy ][ x-jx ]
  return j;
 }
@@ -20,9 +20,10 @@ o.samemap=(a,b,jx,jy,cflg)=>{
  ,ox=cflg?Math.floor(w/2):0,oy=cflg?Math.floor(h/2):0
  ;
  jx=jx-ox,jy=jy-oy
- for(let y=jy;y<h-jy;y++)
-  for(let x=jx;x<w-jx;x++)
-   if( (!o.ispos(a,x,y)) || (b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=0;break}
+ if(!o.ispos(a,jx+w-1,jy+h-1))return 0;//out of range
+ for(let y=jy;y<jy+h;y++)
+  for(let x=jx;x<jx+w;x++)
+   if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=0;break}
  return same;
 }
 o.str2map=(str)=>{
