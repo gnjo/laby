@@ -6,28 +6,24 @@ labyrinth maker
 joinwalk(map,sx,sy,ex,ey,donts,finerate,rand)
 
 部屋の扉の縦横列のみを走査し、最も近い点を見つける。その方向を扉とする。
-getmesure(sx,sy,ex,ey){
+mu.getmesure=(sx,sy,ex,ey)=>{
  return (sx-ex)^2+(sy-ey)^2
 }
-getnearpoint(map,cx,cy,targetsymbol,min){
+mu.getnearpoint=(map,cx,cy,s,min)=>{
+ //s is targetsymbol
+ let h=map.length,w=map[0].length
+ let ary=[] //[x,y,value] 
+ for(let ix=0;ix<w;ix++)
+  if(map[cy][ix]==s)ary.push([ix,cy,mu.getmesure(cx,cy,ix,cy)])
+ for(let iy=0;iy<h;iy++)
+  if(map[iy][cx]==s)ary.push([cx,iy,mu.getmesure(cx,cy,cx,iy)])
+  ;
+ let a=ary.filter(d=>d[2]>min).sort((a,b)=>b-a).pop() //down and young number
 
- return [nx,ny]
+ return [a[0],a[1]]
 }
 
-getroompoint(map,rand,max){
- let t55=mu.genmap(5,5,"0"),t75=mu.genmap(7,5,"0")
- ,h=map.length-1,w=map[0].length-1,found=0
- ,x,y,type
- ;max=max||100;
- for(let i=0;i<max;i++){
-  x=rand(0,w),y=rand(0,h)
-  if(mu.samemap(map,t75,x,y)){found=1;type=75;break}
-  if(mu.samemap(map,t55,x,y)){found=1;type=55;break}
- }
- return found?[x,y,type]:void 0
- //return [x,y,type] //type is 55 or 75
-}
-
+mu.getroompoint(map,rand,max)
 ```
 
 ```
