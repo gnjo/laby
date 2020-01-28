@@ -22,7 +22,7 @@ o.samemap=(a,b,jx,jy,cflg)=>{
  jx=jx-ox,jy=jy-oy
  for(let y=jy;y<jy+h;y++)
   for(let x=jx;x<jx+w;x++)
-   if(b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx])same=0;
+   if( (!o.ispos(a,x,y)) || (b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=0;break}
  return same;
 }
 o.str2map=(str)=>{
