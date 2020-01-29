@@ -66,9 +66,11 @@ makeroom(pattern,door)
 
 ```
 let a=Laby({});
+a.gen(seed,sx,sy,ex,ey)
 ```
 ```
 size=[40,40] //[width,height]
+pnum=8 //random points number
 rnum=[4,12] //[min,max] room number
 retrymax=10 //if try and try this number, false map is null
 //
