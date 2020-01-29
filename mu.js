@@ -143,7 +143,7 @@ o.makeroom=(pattern,door)=>{
  let info=o.getroominfo(pattern||33)
  info.door=door||'N' //NEWS
  info.d=info[info.door]
- info.map=o.clone(o.roompattern[info.pattern]))
+ info.map=o.clone(o.roompattern[info.pattern])
  info.map=o.setpos(info.map,info.d[0],info.d[1],2)
  return info
 }
