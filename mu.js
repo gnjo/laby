@@ -105,31 +105,31 @@ o.getmeasure=(sx,sy,ex,ey)=>{
 
 //room has object, one only.
 //roompattern
-let t33=o.str2map(`
+const t33=o.str2map(`
 000
 030
 000
 `)
-let t53=o.str2map(`
+const t53=o.str2map(`
 00000
 01130
 00000
 `)
-let t35=o.str2map(`
+const t35=o.str2map(`
 000
 010
 010
 030
 000
 `)
-let t55=o.str2map(`
+const t55=o.str2map(`
 00000
 01130
 01110
 01110
 00000
 `)
-let t75=o.str2map(`
+const t75=o.str2map(`
 0000000
 0111110
 0111110
