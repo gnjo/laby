@@ -23,6 +23,8 @@ getroominfo(pattern)
 ;(function(root){
 let o={}
 o.is=(d)=>{return (d||d===0)?true:false}
+o.deep=d=>JSON.parse(JSON.stringify(d));
+o.clone=o.deep
 o.genmap=(w,h,symbol)=>{
  return Array(w*h+1).join(symbol).match(new RegExp(".{"+w+"}","g")).map(d=>d.split(''))
 }
@@ -141,7 +143,7 @@ o.makeroom=(pattern,door)=>{
  let info=o.getroominfo(pattern||33)
  info.door=door||'N' //NEWS
  info.d=info[info.door]
- info.map=[].concat(o.roompattern[info.pattern])
+ info.map=o.clone(o.roompattern[info.pattern]))
  info.map=o.setpos(info.map,info.d[0],info.d[1],2)
  return info
 }
