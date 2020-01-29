@@ -7,7 +7,7 @@ https://codepen.io/gnjo/pen/gObJLKx?editors=1010
 ```
 log      
 v0.10 fix thinks the finishwork recovery. fail door and wildcard copy     
-v0.11 cod mapsymbol definition
+v0.11 cod map symbol definition. all map symbol the string.
 v0.20 cod wildcard copy issue      
 v0.30 cod fail door recovery      
 ```
