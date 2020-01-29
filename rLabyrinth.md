@@ -7,6 +7,7 @@ wall=0
 road=1
 door=2
 object=3 //object is room object
+event=4 //join point
 //utils
 
 getmeasure(sx,sy,ex,ey) // Math.abs(ex-sx)+Math.abs(sy-ey)
@@ -53,8 +54,11 @@ makeroom(pattern,door)
 ```
 
 ```
-let a=Laby({});
-a.gen(seed,sx,sy,ex,ey)
+let a=laby(opts);
+let mm=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
+mm.map
+mm.points={0:[[x,y]....],1:...} 
+//wall=0, road=1, door=2, object=3, event=4 
 ```
 ```
 size=[40,40] //[width,height]
