@@ -2,6 +2,10 @@
 ```
 Random walk like an ants and paste the room on labyrinth.
 ```
+https://codepen.io/gnjo/pen/gObJLKx?editors=1010
+
+thinks the finishwork recovery
+
 ```
 script(src="https://gnjo.github.io/laby/xors.js")
 script(src="https://gnjo.github.io/laby/mu.js")
