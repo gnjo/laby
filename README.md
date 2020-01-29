@@ -30,7 +30,7 @@ size:[40,40] //[width,height]
 function is(d){return (d||d===0)?true:false}
 ```
 ```
-door recoverry
+door recovery
 130
 120
 110
