@@ -84,6 +84,16 @@ o.iswalk=(map,x,y,b)=>{
  return o.ispos(map,x+dv[0],y+dv[1])
 }
 
+o.getturn=(b)=>{
+ if(b==="N") return "S"
+ if(b==="E") return "W"
+ if(b==="W") return "E"
+ if(b==="S") return "N"
+ return "S"
+}
+o.getmeasure=(sx,sy,ex,ey)=>{
+ return Math.abs(ex-sx)+Math.abs(sy-ey)
+}
 
  root.mu=o; //maputil
  /*
