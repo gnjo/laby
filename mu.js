@@ -19,6 +19,8 @@ getturn(b)
 getmeasure(sx,sy,ex,ey)
 makeroom(pattern,door)
 getroominfo(pattern)
+getnearpoint(map,cx,cy,s,min)
+getroompoint(map,rand,max)
 */
 ;(function(root){
 let o={}
@@ -224,6 +226,47 @@ o.getroominfo=(pattern)=>{
  //W:...
  //S:...
 }
+
+o.getroompoint=(map,rand,max)=>{
+ //33,53,35,55,75
+ let t75=o.genmap(7,5,0)
+ let t55=o.genmap(5,5,0)
+ let t35=o.genmap(3,5,0)
+ let t53=o.genmap(5,3,0)
+ let t33=o.genmap(3,3,0)
+ ;
+ let h=map.length,w=map[0].length,found=0
+ ,x,y,type
+ ;max=max||1000;
+ for(let i=0;i<max;i++){
+  x=rand(0,w-1),y=rand(0,h-1)
+  if(o.samemap(map,t75,x,y)){found=1;type=75;break}
+  if(o.samemap(map,t55,x,y)){found=1;type=55;break}
+  if(o.samemap(map,t35,x,y)){found=1;type=35;break}
+  if(o.samemap(map,t53,x,y)){found=1;type=53;break}
+  if(o.samemap(map,t33,x,y)){found=1;type=33;break}
+ }
+ return found?[x,y,type]:void 0
+ //return [x,y,type] //type is 55 or 75
+}
+
+o.getnearpoint=(map,cx,cy,s,min)=>{
+ //s is targetsymbol
+ let h=map.length,w=map[0].length
+ let ary=[] //[x,y,value] 
+ for(let ix=0;ix<w;ix++)
+  if(map[cy][ix]==s)ary.push([ix,cy,o.getmeasure(cx,cy,ix,cy)])
+ for(let iy=0;iy<h;iy++)
+  if(map[iy][cx]==s)ary.push([cx,iy,o.getmeasure(cx,cy,cx,iy)])
+ ;
+ let a=ary.filter(d=>d[2]>min).sort((a,b)=>b[2]-a[2])
+ //console.log(a)
+ a=a.pop() //down and young number
+ if(!a)return void 0
+ //console.log([cx,cy],[a[0],a[1]],mu.getmeasure(cx,cy,a[0],a[1])) 
+ return [a[0],a[1]]
+}
+
 
  root.mu=o; //maputil
  /*
