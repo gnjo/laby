@@ -11,7 +11,7 @@ let a=Array.from({length:100}).map(d=>random(-100,100))
 console.log(a)
  */
  function entry(_s){
-  let is=(d)=>{return(d||d===0)?true:false},_seed=_s||123456789,x=111,y=222,z=333,w=_seed,wk
+  let is=(d)=>{return(d||d===0)?true:false},_seed=_s||123456789,x=158027586,y=206422233,z=758680801,w=_seed,wk
   ,next=()=>{return wk=x^(x<<11),x=y,y=z,z=w, w=(w ^ (w >>> 19)) ^ (wk ^ (wk >>> 8))}
   ;
   return function random(min,max){
