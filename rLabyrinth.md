@@ -52,7 +52,7 @@ getroominfo(pattern,door)
 //size:[w,h]
 //pattern:33 //33,53,35,55,75
 //door:'N' //NEWS
-//d:[N[0],N[1]] //default 
+//d:[x,y,x2,y2] //default 
 //c:[x,y]//center pos
 //o:[x,y]//object pos
 //N:[x,y,x2,y2]//north pos x2,y2 is north and one north
