@@ -10,7 +10,7 @@ object=3 //object is room object
 //utils
 
 getmeasure(sx,sy,ex,ey) // Math.abs(ex-sx)+Math.abs(sy-ey)
-joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //finerante 0-100 or 'corner'
+joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //finerate 0-100 or 'corner'
 getturn(v)// N>S, S>N, E>W, W>E
 ```
 
