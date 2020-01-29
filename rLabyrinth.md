@@ -10,7 +10,7 @@ object=3 //object is room object
 //utils
 
 getmeasure(sx,sy,ex,ey) // Math.abs(ex-sx)+Math.abs(sy-ey)
-
+joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //
 ```
 
 ```
