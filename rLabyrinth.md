@@ -16,6 +16,11 @@ getmeasure(sx,sy,ex,ey) // Math.abs(ex-sx)+Math.abs(sy-ey)
 ```
 //room has object, one only.
 //roompattern
+t33
+020
+232
+020
+
 t53
 00200
 21132
@@ -48,7 +53,7 @@ let a=Laby({});
 ```
 ```
 size=[40,40] //[width,height]
-rnum=[2,8] //[min,max] room number
+rnum=[4,12] //[min,max] room number
 retrymax=10 //if try and try this number, false map is null
 //
 
