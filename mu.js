@@ -142,7 +142,7 @@ o.makeroom=(pattern,door)=>{
  info.door=door||'N' //NEWS
  info.d=info[info.door]
  info.map=[].concat(o.roompattern[info.pattern])
- info.map=o.setpos(info.map),info.d[0],info.d[1],2)
+ info.map=o.setpos(info.map,info.d[0],info.d[1],2)
  return info
 }
 o.getroominfo=(pattern)=>{
