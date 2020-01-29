@@ -6,26 +6,37 @@ door=2
 object=3 //object is room object
 //utils
 
-getmeasure(sx,sy,ex,ey) // (sx-ex)^2+(sy-ey)^2
+getmeasure(sx,sy,ex,ey) // Math.abs(ex-sx)+Math.abs(sy-ey)
 
 ```
 
 ```
 //roompattern
-t33
+t53
+00200
+23132
+00200
+
+t35
 020
-232
+030
+212
+030
 020
 
 t55
 00200
-03330
-23332
-03330
+03130
+21112
+03130
 00200
 
-t57
-
+t75
+0002000
+0311130
+2111112
+0311130
+0002000
 ```
 
 ```
