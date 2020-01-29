@@ -1,6 +1,6 @@
 #random labyrinth
 ```
-randam walk like a ant, and poly fill the room on labyrinth.
+Random walk like an ants and paste the room on labyrinth.
 ```
 ```
 wall=0
