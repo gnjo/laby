@@ -3,6 +3,11 @@
 Random walk like an ants and paste the room on labyrinth.
 ```
 ```
+script(src="https://gnjo.github.io/laby/xors.js")
+script(src="https://gnjo.github.io/laby/mu.js")
+script(src="https://gnjo.github.io/laby/laby.js")
+```
+```
 wall=0
 road=1
 door=2
