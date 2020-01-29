@@ -11,6 +11,7 @@ getmeasure(sx,sy,ex,ey) // Math.abs(ex-sx)+Math.abs(sy-ey)
 ```
 
 ```
+//room has object, one only.
 //roompattern
 t53
 00200
