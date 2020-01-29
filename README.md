@@ -4,7 +4,11 @@ Random walk like an ants and paste the room on labyrinth.
 ```
 https://codepen.io/gnjo/pen/gObJLKx?editors=1010
 
-thinks the finishwork recovery
+history      
+v0.1 [/] thinks the finishwork recovery. fail door and wildcard copy      
+v0.2 [...] wildcard copy issue      
+v0.3 [...] fail door recovery      
+
 
 ```
 script(src="https://gnjo.github.io/laby/xors.js")
