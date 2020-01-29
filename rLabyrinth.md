@@ -62,10 +62,12 @@ mm.objects=[[x,y]...] //3
 mm.events=[[x,y]...] //4
 ```
 ```
-size=[40,40] //[width,height]
-pnum=8 //random points number
-rnum=[4,12] //[min,max] room number
-retrymax=10 //if try and try this number, false map is null
+laby({
+ size:[40,40] //[width,height]
+,pnum:8 //random points number
+,rnum:[4,12] //[min,max] room number
+,retrymax:10 //if try and try this number, false map is null
+,fuzzy:60 //0-100 
 //
-
+})
 ```
