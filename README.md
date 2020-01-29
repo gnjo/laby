@@ -51,11 +51,8 @@ event=4 //join point
 //utils
 
 joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //finerate 0-100 or 'corner'
-getep(w,h,rand) //enough point
-getrp(n,w,h,rand) //random point
 gen(seed,sx,sy,ex,ey){
  let f=(d)=>{return mu.is(d[0])?d:[]}
- let p=[].concat(f([sx,sy]) ).concat(o.getep(w,h,rand)).concat(o.getrp(point,w,h,rand)).concat(f([ex,ey]) ) 
 }
 ```
 
@@ -96,19 +93,3 @@ t75
 getroominfo(pattern)
 makeroom(pattern,door)
 ```
-```
-o.getep=(w,h,rand)=>{
- let x=w-1, y=w-1,xr=Math.floor(x*0.15),yr=Math.floor(y*0.15)
- ,a=[
-  [rand(0,xr),y-rand(0,yr)]
-  ,[rand(0,xr),rand(0,yr)]
-  ,[x-rand(0,xr),y-rand(0,yr)]
-  ,[x-rand(0,xr),rand(0,yr)]
- ]
- return shuffle(a,rand)
-}
-o.getrp=(n,w,h,rand)=>{ 
- return Array.from({length:n}).map(d=>[rand(0,w-1),rand(0,h-1)]) 
-}
-```
-
