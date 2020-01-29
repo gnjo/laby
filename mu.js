@@ -214,7 +214,6 @@ o.getroominfo=(pattern)=>{
  //S:...
 }
 
-
  root.mu=o; //maputil
  /*
 let a=mu.genmap(40,40,"0")
