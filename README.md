@@ -17,7 +17,7 @@ mm.events=[[x,y]...] //4
 ```
 ```
 laby({
- size:[40,40] //[width,height]
+size:[40,40] //[width,height]
 ,point:8 //random points number
 ,roomrange:[4,12] //[min,max] room range
 ,retry:10 //if try and try this number, false map is null
@@ -81,10 +81,14 @@ getroominfo(pattern)
 makeroom(pattern,door)
 ```
 ```
-//checkpoint pattern
-N:[[0,39],[0,0],[39,39],[39,0]]
-,Z:[[0,0],[39,0],[0,39],[39,39]]
-,C:[[39,0],[0,0],[0,39],[39,39]]
-,U:[[0,0],[0,39],[39,39],[39,0]]
+getenoughpoint(w,h,rand){
+let x=w-1, y=w-1,xr=Math.floor(x*0.15),yr=Math.floor(y*0.15)
+return [
+[rand(0,xr),y-rand(0,yr)]
+,[rand(0,xr),rand(0,yr)]
+,[x-rand(0,xr),y-rand(0,yr)]
+,[x-rand(0,xr),rand(0,yr)]
+].sort(()=>rand())
+}
 ```
 
