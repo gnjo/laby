@@ -28,6 +28,9 @@ laby({
 
 # note
 ```
+function is(d){return (d||d===0)?true:false}
+```
+```
 wall=0
 road=1
 door=2
