@@ -57,8 +57,9 @@ makeroom(pattern,door)
 let a=laby(opts);
 let mm=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
 mm.map
-mm.points={0:[[x,y]....],1:...} 
-//wall=0, road=1, door=2, object=3, event=4 
+mm.doors=[[x,y]...] //symbol 2
+mm.objects=[[x,y]...] //3
+mm.events=[[x,y]...] //4
 ```
 ```
 size=[40,40] //[width,height]
