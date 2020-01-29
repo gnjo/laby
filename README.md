@@ -1,4 +1,4 @@
-# random labyrinth
+# laby
 ```
 Random walk like an ants and paste the room on labyrinth.
 ```
@@ -51,6 +51,13 @@ t75
 
 getroominfo(pattern)
 makeroom(pattern,door)
+```
+```
+//checkpoint pattern
+N:[[0,39],[0,0],[39,39],[39,0]]
+,Z:[[0,0],[39,0],[0,39],[39,39]]
+,C:[[39,0],[0,0],[0,39],[39,39]]
+,U:[[0,0],[0,39],[39,39],[39,0]]
 ```
 
 ```
