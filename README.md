@@ -30,6 +30,15 @@ size:[40,40] //[width,height]
 function is(d){return (d||d===0)?true:false}
 ```
 ```
+door recoverry
+130
+120
+110
+
+door is 020 or vertex 020
+
+```
+```
 wall=0
 road=1
 door=2
