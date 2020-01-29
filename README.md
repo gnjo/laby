@@ -39,7 +39,8 @@ event=4 //join point
 //utils
 
 joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //finerate 0-100 or 'corner'
-getenoughpoint(w,h,rand)
+getep(w,h,rand) //enough point
+getrp(n,w,h,rand) //random point
 ```
 
 ```
@@ -80,7 +81,7 @@ getroominfo(pattern)
 makeroom(pattern,door)
 ```
 ```
-o.getenoughpoint=(w,h,rand)=>{
+o.getep=(w,h,rand)=>{
  let x=w-1, y=w-1,xr=Math.floor(x*0.15),yr=Math.floor(y*0.15)
  ,a=[
   [rand(0,xr),y-rand(0,yr)]
@@ -89,6 +90,9 @@ o.getenoughpoint=(w,h,rand)=>{
   ,[x-rand(0,xr),rand(0,yr)]
  ]
  return shuffle(a,rand)
+}
+o.getrp=(n,w,h,rand)=>{ 
+ return Array.from({length:n}).map(d=>[rand(0,w-1),rand(0,h-1)]) 
 }
 ```
 
