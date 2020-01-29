@@ -1,9 +1,28 @@
 //maputil
 /* history
 v0.0 made it
+v1.0 bugfix
+is(d)
+genmap(w,h,symbol)
+mapjoin(a,b,jx,jy)
+samemap(a,b,jx,jy,cflg)
+str2map(str)
+map2str(map)
+map2flg(map,flgsymbol)
+isrange(min,x,max)
+setpos(map,x,y,symbol)
+getpos(map,x,y)
+vec(cx,cy,tx,ty)
+dvec(b)
+iswalk(map,x,y,b)
+getturn(b)
+getmeasure(sx,sy,ex,ey)
+makeroom(pattern,door)
+getroominfo(pattern)
 */
 ;(function(root){
 let o={}
+o.is=(d)=>{return (d||d===0)?true:false}
 o.genmap=(w,h,symbol)=>{
  return Array(w*h+1).join(symbol).match(new RegExp(".{"+w+"}","g")).map(d=>d.split(''))
 }
@@ -46,17 +65,6 @@ o.ispos=(map,x,y)=>{
  return o.isrange(0,x,map[0].length-1)&&o.isrange(0,y,map.length-1)
 }
 
-/*
-o.ispos=(map,x,y)=>{
- try{
-  if(x<0)return false;
-  if(x>map[0].length-1)return false;
-  return map[y][x],true
- }catch(e){
-  return false
- }
-}
-*/
 o.setpos=(map,x,y,symbol)=>{
  if(o.ispos(map,x,y))map[y][x]=symbol
  return map;
