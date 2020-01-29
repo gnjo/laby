@@ -41,6 +41,10 @@ event=4 //join point
 joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //finerate 0-100 or 'corner'
 getep(w,h,rand) //enough point
 getrp(n,w,h,rand) //random point
+gen(seed,sx,sy,ex,ey){
+ let f=(d)=>{return mu.is(d[0])?d:[]}
+ let p=[].concat(f([sx,sy]) ).concat(o.getep(w,h,rand)).concat(o.getrp(point,w,h,rand)).concat(f([ex,ey]) ) 
+}
 ```
 
 ```
