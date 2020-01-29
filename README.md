@@ -5,9 +5,10 @@ Random walk like an ants and paste the room on labyrinth.
 https://codepen.io/gnjo/pen/gObJLKx?editors=1010
 
 history      
-v0.1 [/] thinks the finishwork recovery. fail door and wildcard copy      
-v0.2 [...] wildcard copy issue      
-v0.3 [...] fail door recovery      
+v0.10 fix thinks the finishwork recovery. fail door and wildcard copy     
+v0.11 cod mapsymbol definition
+v0.20 cod wildcard copy issue      
+v0.30 cod fail door recovery      
 
 
 ```
