@@ -95,6 +95,126 @@ o.getmeasure=(sx,sy,ex,ey)=>{
  return Math.abs(ex-sx)+Math.abs(sy-ey)
 }
 
+//room has object, one only.
+//roompattern
+let t33=mu.str2map(`
+000
+030
+000
+`)
+let t53=mu.str2map(`
+00000
+01130
+00000
+`)
+let t35=mu.str2map(`
+000
+010
+010
+030
+000
+`)
+let t55=mu.str2map(`
+00000
+01130
+01110
+01110
+00000
+`)
+let t75=mu.str2map(`
+0000000
+0111110
+0111110
+0311110
+0000000
+`)
+o.roompattern={33:t33,53:t53,35:t35,55:t55,75:t75}
+o.makeroom=(pattern,door)=>{
+ let info=o.getroominfo(pattern||33)
+ info.door=door||'N' //NEWS
+ info.d=info[info.door]
+ info.map=o.setpos([].concat(o.roompattern[info.pattern]),info.d[0],info.d[1],2)
+ return info
+}
+o.getroominfo=(pattern)=>{
+ let f=(x,y,v)=>{
+  let s=o.dvec(v)
+  return [x,y,x+s[0],y+s[1]]
+ }
+ let info={}
+ info.pattern=pattern||33 //33,53,35,55,75
+ let w=parseInt(String(info.pattern).charAt(0))
+ ,h=parseInt(String(info.pattern).charAt(1))
+ ,x=(w-1)/2
+ ,y=(h-1)/2
+ if(info.pattern===33){
+  info.o=[1,1]  
+  /*
+000
+030
+000
+*/  
+ }
+ if(info.pattern===53){
+  /*
+00000
+01130
+00000
+*/ 
+  info.o=[3,1]
+ }
+ if(info.pattern===35){
+  /*
+000
+010
+010
+030
+000
+*/
+  info.o=[1,3]
+ }
+ if(info.pattern===55){
+/*
+00000
+01130
+01110
+01110
+00000
+*/
+  info.o=[3,1]
+ }
+ if(info.pattern===75){
+/*
+0000000
+0111110
+0111110
+0311110
+0000000
+*/
+  info.o=[1,3]
+ }
+  info.size=[w,h]
+  info.c=[x,y]
+  info.N=f(x,0,'N')
+  info.E=f(w-1,y,'E')
+  info.W=f(0,y,'W')
+  info.S=f(x,h-1,'S')
+  info.emap=o.genmap(info.size[0],info.size[1],0)
+  ;
+  return info;
+
+ //map:[[],...]
+ //size:[w,h] 
+ //d:[x,y,x2,y2] //default 
+ //c:[x,y]//center pos
+ //o:[x,y]//object pos
+ //N:[x,y,x2,y2]//north pos x2,y2 is north and one north
+ //E:...
+ //W:...
+ //S:...
+}
+
+
  root.mu=o; //maputil
  /*
 let a=mu.genmap(40,40,"0")
