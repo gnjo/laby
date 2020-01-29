@@ -81,14 +81,15 @@ getroominfo(pattern)
 makeroom(pattern,door)
 ```
 ```
-getenoughpoint(w,h,rand){
-let x=w-1, y=w-1,xr=Math.floor(x*0.15),yr=Math.floor(y*0.15)
-return [
-[rand(0,xr),y-rand(0,yr)]
-,[rand(0,xr),rand(0,yr)]
-,[x-rand(0,xr),y-rand(0,yr)]
-,[x-rand(0,xr),rand(0,yr)]
-].sort(()=>rand())
+o.getenoughpoint=(w,h,rand)=>{
+ let x=w-1, y=w-1,xr=Math.floor(x*0.15),yr=Math.floor(y*0.15)
+ ,a=[
+  [rand(0,xr),y-rand(0,yr)]
+  ,[rand(0,xr),rand(0,yr)]
+  ,[x-rand(0,xr),y-rand(0,yr)]
+  ,[x-rand(0,xr),rand(0,yr)]
+ ]
+ return shuffle(a,rand)
 }
 ```
 
