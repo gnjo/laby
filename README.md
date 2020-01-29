@@ -15,9 +15,9 @@ script(src="https://gnjo.github.io/laby/laby.js")
 let a=laby(opts);
 let mm=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
 mm.map
-mm.doors=[[x,y]...] //symbol 2
-mm.objects=[[x,y]...] //3
 mm.events=[[x,y]...] //4
+//mm.doors=[[x,y]...] //symbol 2
+//mm.objects=[[x,y]...] //3
 ```
 ```
 laby({
