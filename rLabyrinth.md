@@ -1,5 +1,8 @@
 #random labyrinth
 ```
+randam walk like a ant, and poly fill the room on labyrinth.
+```
+```
 wall=0
 road=1
 door=2
