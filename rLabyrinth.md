@@ -1,4 +1,4 @@
-#random labyrinth
+# random labyrinth
 ```
 Random walk like an ants and paste the room on labyrinth.
 ```
@@ -46,6 +46,18 @@ t75
 2111112
 0311110
 0002000
+
+getroominfo(pattern)
+//map:[[],...]
+//size:[w,h]
+//c:[x,y]//center pos
+//o:[x,y]//object pos
+//N:[x,y,x2,y2]//north pos x2,y2 is north and one north
+//E:...
+//W:...
+//S:...
+
+makeroom(pattern,door)
 ```
 
 ```
