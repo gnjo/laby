@@ -1,7 +1,7 @@
 //xorshift
 ;(function(root){
 function shuffle(a,random){
- return [].concat(a).sort(()=>random())
+ return [].concat(a).sort(()=>random()-random())
 }
 
  /*xorshift
