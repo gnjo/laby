@@ -21,7 +21,7 @@ size:[40,40] //[width,height]
 ,point:8 //random points number
 ,roomrange:[4,12] //[min,max] room range
 ,retry:10 //if try and try this number, false map is null
-,fuzzy:60 //0-100 
+,finerate:60 //0-100 
 //
 })
 ```
