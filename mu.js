@@ -88,12 +88,21 @@ o.getpos=(map,x,y)=>{
 const PI=3.141592653589793;
 o.vec=(cx,cy,tx,ty)=>{
   let dx=tx-cx,dy=ty-cy
+  let v=Math.floor(Math.atan2(-1*dy, dx) * 180/PI +0.5); //issue multi os differ
+   if(o.isrange(45,v,135-1))return "N"
+   if(o.isrange(-45,v,45-1))return "E"
+   if(o.isrange(-135,v,-45-1))return "S"
+   return "W" //other W
+} 
+/*
+o.vec=(cx,cy,tx,ty)=>{
+  let dx=tx-cx,dy=ty-cy
   let v=Math.atan2(-1*dy, dx) * 180/PI; //issue multi os differ
    if(v<=135&&v>45)return "N"
    if(v<=45&&v>-45)return "E"
    if(v<=-45&&v>-135)return "S"
    return "W" //other W
-}
+}*/
 o.dvec=(b)=>{
  if(b==="N") return [0,-1]
  if(b==="E") return [1,0]
