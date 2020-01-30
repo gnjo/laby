@@ -10,7 +10,7 @@ Random walk like an ants and paste the room on labyrinth.
 ４．再現性がある。乱数生成器も含め、シード値を固定すれば、計算機や言語に依存せず、同一。
 ５．十分な複雑さがある。部屋は道の隙間を検索し設置し道に繋げる。
 ６．ドアがドア条件を満たす。ドア条件は、020並びが縦か横に必ず現れる。窪みができるドア。
-
+７．生成結果は文字列で保存できる。
 ```
 https://codepen.io/gnjo/pen/gObJLKx?editors=1010
 
