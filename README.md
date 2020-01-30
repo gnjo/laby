@@ -18,6 +18,7 @@ script(src="https://gnjo.github.io/laby/mu.js")
 script(src="https://gnjo.github.io/laby/laby.js")
 ```
 ```
+//usage
 let a=laby({/*opts*/});
 let m=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
 document.body.style.fontFamily="monospace";document.body.textContent=mu.map2str( m.map )
