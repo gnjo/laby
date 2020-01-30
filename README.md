@@ -82,15 +82,6 @@ function is(d){return (d||d===0)?true:false}
 *1*    *0*
 ```
 ```
-//symbol is string
-wall="0"
-road="1"
-door="2"
-object="3" //object is room object
-event="4" //join point
-```
-
-```
 //room pattern. the "3" is object, like a item.
 000
 030
@@ -118,5 +109,12 @@ event="4" //join point
 0311110
 0000000
 ```
-# example
+```
+//symbol is string
+wall="0"
+road="1"
+door="2"
+object="3" //object is room object
+event="4" //join point
+```
 ![img](pi.png)
