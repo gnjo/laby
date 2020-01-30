@@ -7,6 +7,7 @@
    ,point:8 //random points number
    ,roomrange:[10,18] //[min,max] room range
    ,finerate:40 //0-100
+   ,symbol:{wall:"0",road:"1",door:"2",object:"3"}
   }
   o.finishwork=(maps)=>{
    //map and event
@@ -26,7 +27,7 @@
    return shuffle(a,rand)
   }  
   o.joinwalk=function joinwalk(map,sx,sy,ex,ey,count,finerate,rand){
-   map=mu.setpos(map,sx,sy,1);
+   map=mu.setpos(map,sx,sy,o.symbol.road); //symbol
    if(count>1000||(sx===ex&&sy===ey))return map
    let fi=mu.getmeasure(sx,sy,ex,ey)<3?100:finerate
    ,b=(rand(0,100)<fi)?mu.vec(sx,sy,ex,ey):shuffle("NEWS".split(""),rand).pop()
@@ -54,7 +55,7 @@
     if(!rp){continue}
     let typemap=mu.getroominfo(rp[2])
     let cx=rp[0]+typemap.c[0],cy=rp[1]+typemap.c[1]
-    let np=mu.getnearpoint(map,cx,cy,1,3)
+    let np=mu.getnearpoint(map,cx,cy,o.symbol.road,3) //symbol
     if(!np){continue}
     let v=mu.vec(cx,cy,np[0],np[1])
     cx=rp[0]+typemap[v][2],cy=rp[1]+typemap[v][3]
