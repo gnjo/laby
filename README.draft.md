@@ -177,3 +177,12 @@ shuffle(a,random)
 let r=xrand(seed)
 let a=shuffle([0,1,2,3,4],r)
 ```
+# textreader
+```
+let looper=(ev,cr)=>{
+ //ev.t:topmessage, ev.c:centermessage, ev.b:bottommessage, ev.mode:sel or mes, ev.tick:count by fps 
+ cr.keyin('') //<>^v ABXYLR
+ //cr.keyflash() //use system
+}
+let cr=crit(text,looper,opts)
+```
