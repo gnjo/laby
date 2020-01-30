@@ -1,4 +1,5 @@
 
+![img](pi.png)
 # laby
 ```
 Random walk like an ants and paste the room on labyrinth.
