@@ -47,7 +47,7 @@
     let x=a[i+1]
     map=o.joinwalk(map,d[0],d[1],x[0],x[1],0,o.finerate,rand)
    })
-   po.map(d=>map=mu.setpos(map,d[0],d[1],4)) //
+   po.map(d=>map=mu.setpos(map,d[0],d[1], mu.symbol.object)) //symbol
    ;
    for(var i=0,r=0;i<rmax;i++){
     let rp=mu.getroompoint(map,rand,w*h);
@@ -58,11 +58,12 @@
     if(!np){continue}
     let v=mu.vec(cx,cy,np[0],np[1])
     cx=rp[0]+typemap[v][2],cy=rp[1]+typemap[v][3]
-    //console.log(v,cx,cy)
-    map=o.joinwalk(map,cx,cy,np[0],np[1],0,o.finerate,rand)
     let info=mu.makeroom(rp[2],v)
     ,rm=info.map
     map=mu.mapjoin(map,rm,rp[0],rp[1])
+    //seq change
+    map=o.joinwalk(map,cx,cy,np[0],np[1],0,o.finerate,rand)    
+    //
    }
    ;
    return o.finishwork({map:mu.clone(map),events:mu.clone(po)})
