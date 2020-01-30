@@ -1,5 +1,3 @@
-
-![img](pi.png)
 # laby
 ```
 Random walk like an ants and paste the room on labyrinth.
@@ -120,3 +118,5 @@ event="4" //join point
 0311110
 0000000
 ```
+# example
+![img](pi.png)
