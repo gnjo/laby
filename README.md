@@ -19,13 +19,14 @@ script(src="https://gnjo.github.io/laby/laby.js")
 ```
 ```
 let a=laby(opts);
-let mm=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
-mm.map
-mm.events=[[x,y]...] //4
-//mm.doors=[[x,y]...] //symbol 2
-//mm.objects=[[x,y]...] //3
+let m=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
+document.body.style.fontFamily="monospace";document.body.textContent=mu.map2str( m.map )
+//m.events=[[x,y]...] //4
+//m.doors=[[x,y]...] //symbol 2
+//m.objects=[[x,y]...] //3
 ```
 ```
+//opts
 laby({
 size:[40,40] //[width,height]
 ,point:8 //random points number
