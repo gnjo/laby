@@ -28,7 +28,7 @@ getnearpoint(map,cx,cy,s,min)
 getroompoint(map,rand,max)
 v1.7 door issue
 getsymbolary(map,symbol)
-iswelldonedoor=(map,cx,cy)
+iswelldonedoor(map,cx,cy)
 */
 ;(function(root){
 let o={}
