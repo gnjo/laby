@@ -36,7 +36,7 @@
   }
   ////////////////////////
   //quality check
-  o.quality=1;
+  o.quality=100;//0-100
   o.gencount=0;
   o.roomerrorcount=0;
   o.roomtotalcount=0;
