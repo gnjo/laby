@@ -22,9 +22,10 @@ Random walk like an ants and paste the room on labyrinth.
 point: 4~
 size: [20~,20~]
 finerate: 30~
-roomrange:[Math.floor((w*h/9)/10), Math.floor((w*h/9)/3)] //
+roomrange:[Math.floor((w*h/35)/4), Math.floor((w*h/9)/4)] //
 
-部屋の最少コストは縦横三マス空白である。マップのサイズをコスト９で割り、道の分のコストも考慮する。
+部屋の最少コストは九、最大コストは三十五。マップのサイズをコストで割り、部屋の占有率として考える。
+指標はマップ全体の四分の一程度。部屋が隙間にみっしり詰まる事は考えにくい。
 縦横４０マスなら１０から３０部屋程度。
 ```
 https://codepen.io/gnjo/pen/gObJLKx?editors=1010
