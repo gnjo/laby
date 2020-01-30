@@ -39,15 +39,14 @@ size:[40,40] //[width,height]
 
 # note
 ```
+//0 is exist.
 function is(d){return (d||d===0)?true:false}
 ```
 ```
-bad door recovery
+//bad door recovery. door is 020 or vertex 020.
 130   130
 120 > 110
 110   110
-
-door is 020 or vertex 020.
 ```
 ```
 //symbol is string
