@@ -52,7 +52,7 @@ size:[40,40] //[width,height]
 ```
 //room max calc. minimal room cost is 9.
 roomlimit=w*h/9
-roommax= Math.floor(roomlimit/2) //mean, half point is road.
+roommax= Math.floor(roomlimit/2) //mean, half cost devide the road.
 ```
 ```
 //0 is exist.
