@@ -40,8 +40,10 @@
   o.gencount=0;
   o.roomerrorcount=0;
   o.roomtotalcount=0;
+  o.doorerrorcount=0;
   o.getquality=()=>{
-   return o.quality= Math.floor(100*(1-o.roomerrorcount/o.roomtotalcount)+0.5)
+   let err=o.roomerrorcount+o.doorerrorcount
+   return o.quality= Math.floor(100*(1-err/o.roomtotalcount)+0.5)
    //getquality 100*(1-re/rt) //max 100  
   }
   ////////////////////////
@@ -81,7 +83,7 @@
    //issue fail door recovery
    let faildoor=mu.getsymbolary(map,mu.symbol.door).filter(d=>!mu.iswelldonedoor(map,d[0],d[1]))
     //.map(d=>{console.log(mu.clone(map),d);return d})
-    o.roomerrorcount+=faildoor.length //quality   
+    o.doorerrorcount+=faildoor.length //quality   
     faildoor.map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.road)})
    //
     o.getquality();//quality
