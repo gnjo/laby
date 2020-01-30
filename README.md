@@ -31,7 +31,7 @@ laby({
 size:[40,40] //[width,height]
 ,point:8 //random points number
 ,roomrange:[4,12] //[min,max] room range
-,finerate:60 //0-100 
+,finerate:60 //0-100 fuzzy ot strict
 //
 })
 ```
