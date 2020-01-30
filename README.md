@@ -22,6 +22,7 @@ v0.20 stp wildcard copy issue. wildcard symbol * is transparent. stop, wildcard 
 v0.21 fix multi os issue PI=3.141592653589793
 v0.30 fix fail door recovery. if failed the door, change to road. "2" to "1".
 v0.31 fix simple return. map[h][w]
+v0.32 cod quality info, gencount roomerrorcount roomtotalcount getquality 100*(1-rt/re) //max 100
 ```
 ```
 //pug
