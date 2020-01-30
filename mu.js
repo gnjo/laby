@@ -261,7 +261,29 @@ o.getnearpoint=(map,cx,cy,s,min)=>{
  return [a[0],a[1]]
 }
 
+o.getsymbolary=(map,symbol)=>{
+ let h=map.length,w=map[0].length
+ ,ary=[] //
+ for(let y=0;y<h;y++)
+  for(let x=0;x<w;x++)
+   if(map[y][x]==symbol)ary.push([x,y])
+ return ary;
+}
 
+const hdoor=o.str2map(`
+*0*
+121
+*0*
+`)
+const vdoor=o.str2map(`
+*1*
+020
+*1*
+`)
+
+o.iswelldonedoor=(map,cx,cy)=>{
+ return [hdoor,vdoor].some(d=>o.samemap(map,d,cx,cy,1))
+}
  root.mu=o; //maputil
  /*
 let a=mu.genmap(40,40,"0")
