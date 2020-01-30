@@ -7,8 +7,8 @@ Random walk like an ants and paste the room on labyrinth.
 １．階層化可能。始点と終点を指定できる。
 ２．全ての道と部屋が繋がる。部屋数は指定できる。
 ３．接続点は必ず移動可能。生成ロジックは一筆書きのように歩いている。
-４．シード値による再現性がある。乱数生成器付帯。小数点十六桁の計算が可能なら、計算機や言語に依存せず、同一。
-５．十分な複雑さがある。部屋は道の隙間を検索し設置し道に繋げる。
+４．シード値による再現性がある。乱数生成器付帯。計算機や言語に依存せず、同一。
+５．十分な複雑さがある。部屋生成ロジックは道の隙間を埋めるように配置している。
 ６．ドアが窪みドアの条件を満たす。窪みドアは、020並びが縦か横に必ず現れる。
 ７．生成結果は文字列で保存できる。
 ```
@@ -23,6 +23,7 @@ v0.21 fix multi os issue PI=3.141592653589793
 v0.30 fix fail door recovery. if failed the door, change to road. "2" to "1".
 v0.31 fix simple return. map[h][w]
 v0.32 fix quality info laby.getquality, 0-100 low to high
+v0.33 fix dont relation PI
 ```
 ```
 //pug
