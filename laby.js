@@ -41,7 +41,7 @@
   o.roomerrorcount=0;
   o.roomtotalcount=0;
   o.getquality=()=>{
-   return o.quality= Math.floor(100*(1-o.roomerrorcount/roomtotalcount)+0.5)
+   return o.quality= Math.floor(100*(1-o.roomerrorcount/o.roomtotalcount)+0.5)
    //getquality 100*(1-re/rt) //max 100  
   }
   ////////////////////////
