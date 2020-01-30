@@ -1,16 +1,16 @@
 //xorshift
 ;(function(root){
-function shuffle(a,random){
- return [].concat(a).sort(()=>random()-random())
-}
-
- /*xorshift
+ /*xorshift usage
 let seed=888
 let random=xrand(seed)
 let a=Array.from({length:100}).map(d=>random(-100,100))
 console.log(a)
+let b=shuffle(a,random)
  */
- /*
+function shuffle(a,random){
+ return [].concat(a).sort(()=>random()-random())
+}
+ /*if start value change
 [0,1,2,3,4,5,6].map(d=>Math.floor(Math.random()*1000000000)) 
 0: 371973300
 1: 472613715
