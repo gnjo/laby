@@ -63,7 +63,7 @@ gen(seed,sx,sy,ex,ey){
 ```
 
 ```
-//room pattern 3 is object, like a item.
+//room pattern. the "3" is object, like a item.
 000
 030
 000
