@@ -40,10 +40,10 @@ size:[40,40] //[width,height]
 function is(d){return (d||d===0)?true:false}
 ```
 ```
-door recovery
-130
-120
-110
+bad door recovery
+130  130
+120 >110
+110  110
 
 door is 020 or vertex 020
 
@@ -54,12 +54,6 @@ road=1
 door=2
 object=3 //object is room object
 event=4 //join point
-//utils
-
-joinwalk(map,sx,sy,ex,ey,count,finerate,rand) //finerate 0-100 or 'corner'
-gen(seed,sx,sy,ex,ey){
- let f=(d)=>{return mu.is(d[0])?d:[]}
-}
 ```
 
 ```
