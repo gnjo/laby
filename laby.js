@@ -39,7 +39,7 @@
    let f=(d)=>{return mu.is(d[0])?d:[]}
    ,rand=xrand(seed),w=o.size[0],h=o.size[1]
    ,po=[].concat(f([sx,sy]) )/*.concat(o.getep(w,h,rand))*/.concat(o.getrp(o.point,w,h,rand)).concat(f([ex,ey]) )
-   ,map=mu.genmap(w,h,0)
+   ,map=mu.genmap(w,h,mu.symbol.wall)
    ,rmax=rand(o.roomrange[0],o.roomrange[1])
    ;
    po.map((d,i,a)=>{
