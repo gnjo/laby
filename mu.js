@@ -293,14 +293,5 @@ o.iswelldonedoor=(map,cx,cy)=>{
  return [hdoor,vdoor].some(d=>o.samemap(map,d,cx,cy,1))
 }
  root.mu=o; //maputil
- /*
-let a=mu.genmap(40,40,"0")
-let b=mu.genmap(20,10,"1")
-let c=mu.genmap(20,10,"*")
-let d=mu.map2flg(mu.genmap(20,10,"3"),"3")
-let ret=mu.mapjoin(a,b,20,0)
-let flg=mu.samemap(b,d,0,0);
-fn.q('pre').textContent=mu.map2str(ret)
-console.log(mu.ispos(a,0,0)) 
- */
+ 
 })(this);
