@@ -82,10 +82,9 @@
    ;
    //issue fail door recovery
    let faildoor=mu.getsymbolary(map,mu.symbol.door).filter(d=>!mu.iswelldonedoor(map,d[0],d[1]))
-    //.map(d=>{console.log(mu.clone(map),d);return d})
-    o.doorerrorcount+=faildoor.length //quality   
     faildoor.map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.road)})
-   //
+   ;
+    o.doorerrorcount+=faildoor.length //quality
     o.getquality();//quality
    return o.finishwork(map)
   }
