@@ -47,7 +47,7 @@
     let x=a[i+1]
     map=o.joinwalk(map,d[0],d[1],x[0],x[1],0,o.finerate,rand)
    })
-   po.map(d=>map=mu.setpos(map,d[0],d[1], mu.symbol.object)) //symbol
+   po.map(d=>map=mu.setpos(map,d[0],d[1], mu.symbol.event)) //symbol
    ;
    for(var i=0,r=0;i<rmax;i++){
     let rp=mu.getroompoint(map,rand,w*h);
