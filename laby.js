@@ -8,9 +8,9 @@
    ,roomrange:[10,18] //[min,max] room range
    ,finerate:40 //0-100
   }
-  o.finishwork=(maps)=>{
+  o.finishwork=(map)=>{
    //map and event
-   return maps;
+   return map;
   }
   o.getrp=(n,w,h,rand)=>{ 
    return Array.from({length:n}).map(d=>[rand(0,w-1),rand(0,h-1)]) 
@@ -66,7 +66,7 @@
     //
    }
    ;
-   return o.finishwork({map:mu.clone(map),events:mu.clone(po)})
+   return o.finishwork(map)
   }
   ////////////////////////
   o=Object.assign(o,opts)
