@@ -29,6 +29,7 @@ getroompoint(map,rand,max)
 v1.7 door issue
 getsymbolary(map,symbol)
 iswelldonedoor(map,cx,cy)
+v1.8 vec change. non relation Math
 */
 ;(function(root){
 let o={}
