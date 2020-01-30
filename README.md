@@ -24,6 +24,7 @@ v0.30 fix fail door recovery. if failed the door, change to road. "2" to "1".
 v0.31 fix simple return. map[h][w]
 v0.32 fix quality info laby.getquality, 0-100 low to high
 v0.33 fix dont relation PI
+v0.40 cod how to do the roundabout way.
 ```
 ```
 //pug
