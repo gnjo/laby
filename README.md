@@ -12,22 +12,6 @@ Random walk like an ants and paste the room on labyrinth.
 ６．ドアが窪みドアの条件を満たす。窪みドアは、020並びが縦か横に必ず現れる。
 ７．生成結果は文字列で保存できる。
 ```
-```
-実測値の精度。
-一億回に一回程度のマップ生成失敗。finerateが低いと失敗しやすい。
-部屋は二割程度の確率で失敗する。多くの場合は隙間がない。確実に部屋数を確保するには十分に考慮する必要がある。
-```
-```
-オプションの指標。
-point: 4~
-size: [20~,20~]
-finerate: 30~
-roomrange:[Math.floor((w*h/35)/4), Math.floor((w*h/9)/4)] //
-
-部屋の最少コストは九、最大コストは三十五。マップのサイズをコストで割り、部屋の占有率として考える。
-指標はマップ全体の四分の一程度。部屋が隙間にみっしり詰まる事は考えにくい。
-縦横４０マスなら１０から４０部屋程度。
-```
 https://codepen.io/gnjo/pen/gObJLKx?editors=1010
 
 ```
@@ -65,9 +49,20 @@ size:[40,40] //[width,height]
 
 # note
 ```
-//room max calc. minimal room cost is 9.
-roomlimit=w*h/9
-roommax= Math.floor(roomlimit/2) //mean, half cost devide the road.
+実測値の精度。
+一億回に一回程度のマップ生成失敗。finerateが低いと失敗しやすい。
+部屋は二割程度の確率で失敗する。多くの場合は隙間がない。確実に部屋数を確保するには十分に考慮する必要がある。
+```
+```
+オプションの指標。
+point: 4~
+size: [20~,20~]
+finerate: 30~
+roomrange:[Math.floor((w*h/35)/4), Math.floor((w*h/9)/4)] //
+
+部屋の最少コストは九、最大コストは三十五。マップのサイズをコストで割り、部屋の占有率として考える。
+指標はマップ全体の四分の一程度。部屋が隙間にみっしり詰まる事は考えにくい。
+縦横４０マスなら１０から４０部屋程度。
 ```
 ```
 //0 is exist.
