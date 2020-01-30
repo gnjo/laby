@@ -12,6 +12,7 @@ v0.20 stp wildcard copy issue. wildcard symbol * is transparent. stop, wildcard 
 v0.30 cod fail door recovery. if failed the door, change to road. "2" to "1".
 ```
 ```
+//pug
 script(src="https://gnjo.github.io/laby/xors.js")
 script(src="https://gnjo.github.io/laby/mu.js")
 script(src="https://gnjo.github.io/laby/laby.js")
