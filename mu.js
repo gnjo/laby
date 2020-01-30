@@ -2,25 +2,33 @@
 /* history
 v0.0 made it
 v1.0 bugfix
-is(d)
+v1.1 is(d)
+v1.2 
 genmap(w,h,symbol)
 mapjoin(a,b,jx,jy)
 samemap(a,b,jx,jy,cflg)
 str2map(str)
 map2str(map)
 map2flg(map,flgsymbol)
+v1.3 
 isrange(min,x,max)
 setpos(map,x,y,symbol)
 getpos(map,x,y)
+v1.4 
 vec(cx,cy,tx,ty)
 dvec(b)
 iswalk(map,x,y,b)
 getturn(b)
+v1.5 
 getmeasure(sx,sy,ex,ey)
 makeroom(pattern,door)
 getroominfo(pattern)
+v1.6
 getnearpoint(map,cx,cy,s,min)
 getroompoint(map,rand,max)
+v1.7 door issue
+getsymbolary(map,symbol)
+iswelldonedoor=(map,cx,cy)
 */
 ;(function(root){
 let o={}
