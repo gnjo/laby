@@ -21,8 +21,10 @@ function shuffle(a,random){
 6: 281552588 
  */
  function entry(_s){
-  let is=(d)=>{return(d||d===0)?true:false},_seed=_s||371973300,x=472613715,y=413900530,z=942798599,w=_seed,wk
-  ,next=()=>{return wk=x^(x<<11),x=y,y=z,z=w, w=(w ^ (w >>> 19)) ^ (wk ^ (wk >>> 8))}
+  let _seed=_s||371973300,x=472613715,y=413900530,z=942798599,w=_seed,wk
+  ;
+  function is(d){return(d||d===0)?true:false}
+  function next(){return wk=x^(x<<11),x=y,y=z,z=w, w=(w ^ (w >>> 19)) ^ (wk ^ (wk >>> 8))}  
   ;
   return function random(min,max){
     if(is(min)&&!is(max)) max=min,min=0;
