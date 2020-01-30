@@ -83,6 +83,22 @@ function is(d){return (d||d===0)?true:false}
 *1*    *0*
 ```
 ```
+getlookfront(map,x,y,v,depth)
+
+depth4
+012
+345
+678
+9AB
+-*-
+
+v=W   v=E
+258B-9630
+147A+A741
+0369-B852
+
+```
+```
 //room pattern. the "3" is object, like a item.
 000
 030
