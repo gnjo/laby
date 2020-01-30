@@ -214,7 +214,7 @@ o.getroominfo=(pattern)=>{
   info.E=f(w-1,y,'E')
   info.W=f(0,y,'W')
   info.S=f(x,h-1,'S')
-  info.emap=o.genmap(info.size[0],info.size[1],0)
+  info.emap=o.genmap(info.size[0],info.size[1],o.symbol.wall) //symbol
   ;
   return info;
 
@@ -231,22 +231,14 @@ o.getroominfo=(pattern)=>{
 
 o.getroompoint=(map,rand,max)=>{
  //33,53,35,55,75
- let t75=o.genmap(7,5,0)
- let t55=o.genmap(5,5,0)
- let t35=o.genmap(3,5,0)
- let t53=o.genmap(5,3,0)
- let t33=o.genmap(3,3,0)
+ let ary=[75,55,35,53,33].map(d=>o.getroominfo(d))
  ;
  let h=map.length,w=map[0].length,found=0
  ,x,y,type
  ;max=max||1000;
  for(let i=0;i<max;i++){
   x=rand(0,w-1),y=rand(0,h-1)
-  if(o.samemap(map,t75,x,y)){found=1;type=75;break}
-  if(o.samemap(map,t55,x,y)){found=1;type=55;break}
-  if(o.samemap(map,t35,x,y)){found=1;type=35;break}
-  if(o.samemap(map,t53,x,y)){found=1;type=53;break}
-  if(o.samemap(map,t33,x,y)){found=1;type=33;break}
+  if(ary.some( (info)=>{if(o.samemap(map,info.emap,x,y))return found=1,type=info.pattern,true} ))break;
  }
  return found?[x,y,type]:void 0
  //return [x,y,type] //type is 55 or 75
