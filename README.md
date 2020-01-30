@@ -63,6 +63,11 @@ function is(d){return (d||d===0)?true:false}
 130   130
 120 > 110
 110   110
+
+//welldone door pattern
+*1*    *0*
+020 or 121
+*1*    *0*
 ```
 ```
 //symbol is string
