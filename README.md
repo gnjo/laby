@@ -50,11 +50,12 @@ bad door recovery
 door is 020 or vertex 020.
 ```
 ```
-wall=0
-road=1
-door=2
-object=3 //object is room object
-event=4 //join point
+//symbol is string
+wall="0"
+road="1"
+door="2"
+object="3" //object is room object
+event="4" //join point
 ```
 
 ```
