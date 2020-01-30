@@ -48,14 +48,14 @@ o.mapjoin=(a,b,jx,jy)=>{
 }
 o.samemap=(a,b,jx,jy,cflg)=>{
  //* is wildcard,cflg is jx,jy is center. odd number only.
- let same=1,h=b.length,w=b[0].length
+ let same=true/*1*/,h=b.length,w=b[0].length
  ,ox=cflg?Math.floor(w/2):0,oy=cflg?Math.floor(h/2):0
  ;
  jx=jx-ox,jy=jy-oy
- if(!o.ispos(a,jx+w-1,jy+h-1))return 0;//out of range
+ if(!o.ispos(a,jx+w-1,jy+h-1))return false;//0;//out of range
  for(let y=jy;y<jy+h;y++)
   for(let x=jx;x<jx+w;x++)
-   if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=0;break}
+   if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=false/*0*/;break}
  return same;
 }
 o.str2map=(str)=>{
