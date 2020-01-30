@@ -35,13 +35,25 @@
    return o.joinwalk(map,sx,sy,ex,ey,count+1,finerate,rand)
   }
   ////////////////////////
+  //quality check
+  o.quality=1;
+  o.gencount=0;
+  o.roomerrorcount=0;
+  o.roomtotalcount=0;
+  o.getquality=()=>{
+   return o.quality= Math.floor(100*(1-o.roomerrorcount/roomtotalcount)+0.5)
+   //getquality 100*(1-re/rt) //max 100  
+  }
+  ////////////////////////
   o.gen=(seed,sx,sy,ex,ey)=>{
+   o.gencount++;//quality
    let f=(d)=>{return mu.is(d[0])?d:[]}
    ,rand=xrand(seed),w=o.size[0],h=o.size[1]
    ,po=[].concat(f([sx,sy]) )/*.concat(o.getep(w,h,rand))*/.concat(o.getrp(o.point,w,h,rand)).concat(f([ex,ey]) )
    ,map=mu.genmap(w,h,mu.symbol.wall)
    ,rmax=rand(o.roomrange[0],o.roomrange[1])
    ;
+   o.roomtotalcount+=rmax;//quality
    po.map((d,i,a)=>{
     if(i===a.length-1)return;
     let x=a[i+1]
@@ -51,11 +63,11 @@
    ;
    for(var i=0,r=0;i<rmax;i++){
     let rp=mu.getroompoint(map,rand,w*h);
-    if(!rp){continue}
+    if(!rp){o.roomerrorcount++;continue} //quality
     let typemap=mu.getroominfo(rp[2])
     let cx=rp[0]+typemap.c[0],cy=rp[1]+typemap.c[1]
     let np=mu.getnearpoint(map,cx,cy,mu.symbol.road,3) //symbol
-    if(!np){continue}
+    if(!np){o.roomerrorcount++;continue} //quality
     let v=mu.vec(cx,cy,np[0],np[1])
     cx=rp[0]+typemap[v][2],cy=rp[1]+typemap[v][3]
     let info=mu.makeroom(rp[2],v)
@@ -67,10 +79,12 @@
    }
    ;
    //issue fail door recovery
-   mu.getsymbolary(map,mu.symbol.door).filter(d=>!mu.iswelldonedoor(map,d[0],d[1]))
+   let faildoor=mu.getsymbolary(map,mu.symbol.door).filter(d=>!mu.iswelldonedoor(map,d[0],d[1]))
     //.map(d=>{console.log(mu.clone(map),d);return d})
-    .map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.road)})
+    o.roomerrorcount+=faildoor.length //quality   
+    faildoor.map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.road)})
    //
+    o.getquality();//quality
    return o.finishwork(map)
   }
   ////////////////////////
