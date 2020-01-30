@@ -50,6 +50,11 @@ size:[40,40] //[width,height]
 
 # note
 ```
+//room max calc. minimal room cost is 9.
+roomlimit=w*h/9
+roommax= Math.floor(roomlimit/2) //mean, half point is road.
+```
+```
 //0 is exist.
 function is(d){return (d||d===0)?true:false}
 ```
