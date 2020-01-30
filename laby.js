@@ -10,7 +10,7 @@
   }
   o.finishwork=(map)=>{
    //map and event
-   return map;
+   return mu.clone(map);
   }
   o.getrp=(n,w,h,rand)=>{ 
    return Array.from({length:n}).map(d=>[rand(0,w-1),rand(0,h-1)]) 
@@ -66,6 +66,11 @@
     //
    }
    ;
+   //issue fail door recovery
+   mu.getsymbolary(map,mu.symbol.door).filter(d=>!mu.iswelldonedoor(map,d[0],d[1]))
+    //.map(d=>{console.log(mu.clone(map),d);return d})
+    .map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.road)})
+   //
    return o.finishwork(map)
   }
   ////////////////////////
