@@ -72,7 +72,7 @@ o.map2flg=(map,flgsymbol)=>{
 o.isrange=(min,x,max)=>{
  let wk=min
  if(min>max) min=max,max=wk;
- return (min<=x&&x<=max)
+ return (min<=x&&x<=max) //equal and equal
 }
 o.ispos=(map,x,y)=>{
  return o.isrange(0,x,map[0].length-1)&&o.isrange(0,y,map.length-1)
