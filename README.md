@@ -5,7 +5,7 @@ Random walk like an ants and paste the room on labyrinth.
 https://codepen.io/gnjo/pen/gObJLKx?editors=1010
 
 ```
-log      
+//history 
 v0.10 fix thinks the finishwork recovery. fail door and wildcard copy     
 v0.11 fix map symbol definition. all map symbol the string.
 v0.20 stp wildcard copy issue. wildcard symbol * is transparent. stop, wildcard copy dont need to use.
@@ -41,12 +41,11 @@ function is(d){return (d||d===0)?true:false}
 ```
 ```
 bad door recovery
-130  130
-120 >110
-110  110
+130   130
+120 > 110
+110   110
 
-door is 020 or vertex 020
-
+door is 020 or vertex 020.
 ```
 ```
 wall=0
