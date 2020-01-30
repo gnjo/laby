@@ -77,9 +77,10 @@ o.setpos=(map,x,y,symbol)=>{
 o.getpos=(map,x,y)=>{
  return o.ispos(map,x,y)?map[y][x]:void 0
 }
+const PI=3.141592653589793;
 o.vec=(cx,cy,tx,ty)=>{
   let dx=tx-cx,dy=ty-cy
-  let v=Math.atan2(-1*dy, dx) * 180 / Math.PI;
+  let v=Math.atan2(-1*dy, dx) * 180/PI; //issue multi os differ
    if(v<=135&&v>45)return "N"
    if(v<=45&&v>-45)return "E"
    if(v<=-45&&v>-135)return "S"
