@@ -85,7 +85,7 @@ o.setpos=(map,x,y,symbol)=>{
 o.getpos=(map,x,y)=>{
  return o.ispos(map,x,y)?map[y][x]:void 0
 }
-const PI=3.141592653589793;
+//dont relation PI round
 o.vec=(cx,cy,tx,ty)=>{
  let dx=tx-cx,dy=ty-cy,a=dy/(dx+0.0000001)
  if(-1<a&&a<1){
@@ -97,6 +97,7 @@ o.vec=(cx,cy,tx,ty)=>{
  return "N"
 }
 /*
+const PI=3.141592653589793;
 o.vec=(cx,cy,tx,ty)=>{
   let dx=tx-cx,dy=ty-cy
   let v=Math.floor(Math.atan2(-1*dy, dx) * 180/PI +0.5); //issue multi os differ
