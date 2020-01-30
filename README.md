@@ -32,6 +32,7 @@ script(src="https://gnjo.github.io/laby/laby.js")
 ```
 //usage
 let a=laby({/*opts*/});
+let seed=100
 let map=a.gen(seed) //or a.gen(seed,sx,sy,ex,ey)
 document.body.style.fontFamily="monospace";document.body.textContent=mu.map2str( map )
 ```
