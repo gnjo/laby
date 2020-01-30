@@ -5,7 +5,7 @@
   let o={
    size:[40,40] //[width,height]
    ,point:8 //random points number
-   ,roomrange:[10,30] //[min,max] room range
+   ,roomrange:[15,30] //[min,max] room range
    ,finerate:40 //0-100
   }
   o.finishwork=(map)=>{
