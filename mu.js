@@ -30,6 +30,12 @@ v1.7 door issue
 getsymbolary(map,symbol)
 iswelldonedoor(map,cx,cy)
 v1.8 vec change. non relation Math
+v2.0 mapctrl
+lrot(ary)
+rrot(ary)
+getaround(ary,cx,cy,d,def)
+getfront(_ary,cx,cy,v,w,h,def)
+r2a(_k,_v)
 */
 ;(function(root){
 let o={}
@@ -311,10 +317,48 @@ const vdoor=o.str2map(`
 020
 *1*
 `)
-
 o.iswelldonedoor=(map,cx,cy)=>{
  return [hdoor,vdoor].some(d=>o.samemap(map,d,cx,cy,1))
 }
+//////////////////////
+o.lrot = a => a[0].map((_, c) => a.map(r => r[c]).reverse());
+o.rrot = a => a[0].map((_, c) => a.map(r => r[c])).reverse();
+o.getaround=(ary,cx,cy,d,def)=>{
+ //if out of range is def
+   def=def||'0'
+   let ret='',re=new RegExp(`.{${d*2+1}}`,'g')
+   for(let yy=cy-d;yy<cy+d+1;yy++)
+    for(let xx=cx-d;xx<cx+d+1;xx++)
+     ret+= o.ispos(ary,xx,yy)?ary[yy][xx]:def
+   ;
+   return ret.match(re).map(d=>d.split(''))
+}
+o.getfront=(_ary,cx,cy,v,w,h,def)=>{
+ let ary=o.getaround(_ary,cx,cy,Math.max(w,h),def)
+ v=v||'N'
+ let calc=(x)=>{
+  //return x
+  let oy=(h-w>=0)?1:w-h+1
+  ,ox=Math.floor(x[0].length/2)-Math.floor(w/2)
+  return x.slice(oy,h+oy).map(d=>d.slice(ox,w+ox))
+ }
+ if(v==='N')return calc(ary)
+ if(v==='E')return calc(o.rrot(ary))
+ if(v==='S')return calc(o.rrot(o.rrot(ary)) )
+ if(v==='W')return calc(o.lrot(ary))
+}
+o.r2a=(_k,_v)=>{
+ let v=(''+_v).toUpperCase()||'N',k=_k||'^'//<>^v
+ let vk={
+  'N^':'N','Nv':'S','N<':'W','N>':'E'
+ ,'S^':'S','Sv':'N','S<':'E','S>':'W'
+ ,'W^':'W','Wv':'E','W<':'S','W>':'N'
+ ,'E^':'E','Ev':'W','E<':'N','E>':'S'
+ }
+ return vk[v+k]||'N'
+}
+
+//////////////////////
  root.mu=o; //maputil
- 
+////////////////////// 
 })(this);
