@@ -137,6 +137,26 @@ event="4" //join point
 ![img](pi.png)
 
 
+# mapctrl
+https://codepen.io/gnjo/pen/OJPKQYp
+
+
+to mu
+```
+//maskmap 0:view 1:foot 9:unknown. initialize is 9
+let wa=mapwalk(map,maskmap,checkcallback)
+ .jump(x,y,v)
+ .walk('NEWS<>^v',keepbackflg)
+ .slide('<>')
+ .turn('NEWS<>^v')
+ .getmap(w,h,opt) //'a','v','n'
+ .getmaskmap(w,h,opt)
+ .getv() //standing vector
+ .getf() //front
+ .getc() //standing char
+ .getpos() //x,y,v,vo,c,f
+```
+
 # wire
 https://codepen.io/gnjo/pen/XWJLgxd?editors=1010
 
