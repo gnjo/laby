@@ -143,6 +143,13 @@ https://codepen.io/gnjo/pen/OJPKQYp
 
 to mu
 ```
+o.lrot = a => a[0].map((_, c) => a.map(r => r[c]).reverse());
+o.rrot = a => a[0].map((_, c) => a.map(r => r[c])).reverse();
+o.getaround
+o.getfront
+o.r2a=(_k,_v)
+```
+```
 //maskmap 0:view 1:foot 9:unknown. initialize is 9
 let wa=mapwalk(map,maskmap,checkcallback)
  .jump(x,y,v)
