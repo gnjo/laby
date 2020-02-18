@@ -150,7 +150,42 @@ let wa=mapwalk(map,maskmap,checkcallback)
  .getview() /
  .getpos() //x,y,v,vo,c,f
 ```
+```
+//usage
+let wa=mapwalk(map,map,()=>{return}).jump(8,8,'N')
+// .walk()
+// .turn('NEWS<>^v')
+//
+// .isjump(x,y,ngchars)
+// .iswalk(ngchars) 
+// .getmap(w,h,opt) //'a','v','n'
+// .getmaskmap(w,h,opt)
+// .getpos() //x,y,v,vo,c,f
+fn.q('pre.a').textContent=mu.map2str( wa.getview() )
+let mac=`
+#start
+{fn.q('pre.d').textContent=mu.map2str( wa.getmap(7,7,'a') )}
 
+k>
+{fn.q('pre.b').textContent=$$k}
+{fn.q('pre.c').textContent=JSON.stringify(wa.getpos())}
+
+{($$k==='A'||$$k==='^')&&wa.iswalk('0')}>>>#walk
+{/[v<>]/.test($$k)}>>>#turn
+{1}>>>#start
+
+#turn
+{wa.turn($$k)}
+{fn.q('pre.a').textContent=mu.map2str( wa.getview() )}
+{1}>>>#start
+
+#walk
+{wa.walk()}
+{fn.q('pre.a').textContent=mu.map2str( wa.getview() )}
+{1}>>>#start
+`
+vitRead(mac)
+```
 
 # wire
 https://codepen.io/gnjo/pen/XWJLgxd?editors=1010
