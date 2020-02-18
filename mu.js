@@ -399,6 +399,7 @@ o.r2a=(_k,_v)=>{
    o.view=mu.getfront(map,o.x,o.y,o.v,3,3)
    o.c=o.view[2][1]
    o.f=o.view[1][1]
+   o.maskmap[o.y][o.x]=o.v//
   }
   o.jump=(x,y,v)=>{
    o.update(x,y,v)
