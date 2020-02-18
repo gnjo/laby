@@ -137,32 +137,20 @@ event="4" //join point
 ![img](pi.png)
 
 
-# mapctrl
+# mapwalk to mu
 https://codepen.io/gnjo/pen/OJPKQYp
-
-
-to mu
-```
-o.lrot = a => a[0].map((_, c) => a.map(r => r[c]).reverse());
-o.rrot = a => a[0].map((_, c) => a.map(r => r[c])).reverse();
-o.getaround
-o.getfront
-o.r2a=(_k,_v)
-```
 ```
 //maskmap 0:view 1:foot 9:unknown. initialize is 9
 let wa=mapwalk(map,maskmap,checkcallback)
  .jump(x,y,v)
- .walk('NEWS<>^v',keepbackflg)
- .slide('<>')
- .turn('NEWS<>^v')
+ .walk()
+ .turn('NEWS<>v')
  .getmap(w,h,opt) //'a','v','n'
  .getmaskmap(w,h,opt)
- .getv() //standing vector
- .getf() //front
- .getc() //standing char
+ .getview() /
  .getpos() //x,y,v,vo,c,f
 ```
+
 
 # wire
 https://codepen.io/gnjo/pen/XWJLgxd?editors=1010
