@@ -1,4 +1,4 @@
-//maputil
+//maputil and mapwalk
 /* history
 v0.0 made it
 v1.0 bugfix
@@ -37,6 +37,7 @@ getaround(ary,cx,cy,d,def)
 getfront(_ary,cx,cy,v,w,h,def)
 r2a(_k,_v)
 v2.1 bugfix r2a
+v3 mapwalk
 */
 ;(function(root){
 let o={}
@@ -363,3 +364,86 @@ o.r2a=(_k,_v)=>{
  root.mu=o; //maputil
 ////////////////////// 
 })(this);
+/*mapwalk(map,maskmap,caller) //maskmap dont work
+.jump
+.walk //walk is ^ or A
+.turn
+.jsjump
+.iswalk
+.getmap
+.getmaskmap
+.getview
+.getpos
+*/
+;(function(root){
+
+ function entry(map,maskmap,caller){
+  let o={x:0,y:0,v:'N',vo:'N',c:'0',f:'0'}
+  //o.c is ground
+  o.map=map;
+  o.maskmap=maskmap;
+  o.caller=caller;
+  o.update=(x,y,v)=>{
+   if(x||x===0)o.x=x,o.y=y,o.vo=o.v,o.v=v;
+   o.view=mu.getfront(map,o.x,o.y,o.v,3,3)
+   o.c=o.view[2][1]
+   o.f=o.view[1][1]
+  }
+  o.jump=(x,y,v)=>{
+   o.update(x,y,v)
+   return o;
+  }
+  o.walk=()=>{
+   //walk is A or ^
+   // N 
+   //W+E
+   // S
+   if(o.v==='W') o.x--;
+   else if(o.v==='E') o.x++;
+   else if(o.v==='S') o.y++;
+   else o.y--;
+   o.update()
+   return o;
+  }
+  o.turn=(c)=>{
+   let cv=/N|E|W|S/.test(c)?c:mu.r2a(c||'^',o.v)
+   o.vo=o.v,o.v=cv
+   //
+   o.update()
+   return o;
+  } //'NEWS<>^v'
+  //
+  o.isjump=(x,y,ngchars)=>{
+   let c=map[y][x]
+   return !ngchars.split(',').some(d=>c===d)
+  }
+  o.iswalk=(ngchars)=>{
+   let c=o.f
+   return !ngchars.split(',').some(d=>c==d)   
+  } 
+  o.getmap=(w,h,opt)=>{ //opt //'a','v','n'
+   if(opt==='a')return mu.getaround(o.map,o.x,o.y,~~((w-1)/2),'0')
+   if(opt==='v')return mu.getfront(o.map,o.x,o.y,o.v,w,h,'0')
+   return o.map
+   ;
+  } 
+  o.getmaskmap=(w,h,opt)=>{//opt //'a','v','n'
+   if(opt==='a')return mu.getaround(o.maskmap,o.x,o.y,~~((w-1)/2),'0')
+   if(opt==='v')return mu.getfront(o.maskmap,o.x,o.y,o.v,w,h,'0')
+   return o.maskmap
+   ;
+  }
+  o.getview=()=>{return o.view}
+  //x,y,v,vo,c,f
+  o.getpos=()=>{return {x:o.x, y:o.y, v:o.v, vo:o.vo, c:o.c, f:o.f, view:o.view}}
+  
+  //
+  o.update(0,0,'N')
+  //
+  return o;
+ }
+ root.mapwalk=entry;
+})(this);
+
+
+
