@@ -36,6 +36,7 @@ rrot(ary)
 getaround(ary,cx,cy,d,def)
 getfront(_ary,cx,cy,v,w,h,def)
 r2a(_k,_v)
+v2.1 bugfix r2a
 */
 ;(function(root){
 let o={}
@@ -355,7 +356,7 @@ o.r2a=(_k,_v)=>{
  ,'W^':'W','Wv':'E','W<':'S','W>':'N'
  ,'E^':'E','Ev':'W','E<':'N','E>':'S'
  }
- return vk[v+k]||'N'
+ return vk[v+k]||v //bug 'N'
 }
 
 //////////////////////
