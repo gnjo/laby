@@ -74,6 +74,17 @@ o.str2map=(str)=>{
 o.map2str=(map)=>{
  return map.map(d=>d.join('')).join('\n')
 }
+o.map2str2=(map,x,y,v)=>{
+ let m=o.clone(map)
+ let c='^'
+ if(v==='N') c='^'
+ if(v==='S') c='v'
+ if(v==='W') c='<'
+ if(v==='E') c='>'
+ m[y][x]=c
+ return m.map(d=>d.join('')).join('\n')
+}
+
 o.map2flg=(map,flgsymbol)=>{
  return map.map(d=>d.map(d=>d==flgsymbol?1:0))
 }
