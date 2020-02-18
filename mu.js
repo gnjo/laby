@@ -399,7 +399,23 @@ o.r2a=(_k,_v)=>{
    o.view=mu.getfront(map,o.x,o.y,o.v,3,3)
    o.c=o.view[2][1]
    o.f=o.view[1][1]
+   //
+   //o.ispos=(map,x,y)
    o.maskmap[o.y][o.x]=o.c//
+   if(o.v==='N'||o.v==='S'){
+    let flg=false
+    flg=mu.ispos(o.map,o.x,o.y-1)
+    if(flg&&o.map[o.y-1][o.x]=='0') o.maskmap[o.y-1][o.x]='0'
+    flg=mu.ispos(o.map,o.x,o.y+1)
+    if(flg&&o.map[o.y+1][o.x]=='0') o.maskmap[o.y+1][o.x]='0'    
+   }
+   if(o.v==='E'||o.v==='W'){
+    let flg=false
+    flg=mu.ispos(o.map,o.x-1,o.y)
+    if(flg&&o.map[o.y][o.x-1]=='0') o.maskmap[o.y][o.x-1]='0'
+    flg=mu.ispos(o.map,o.x+1,o.y)
+    if(flg&&o.map[o.y][o.x+1]=='0') o.maskmap[o.y][o.x+1]='0'        
+   }   
    //console.log(o.maskmap)
   }
   o.jump=(x,y,v)=>{
