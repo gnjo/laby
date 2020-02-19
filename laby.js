@@ -66,8 +66,6 @@
    })
    //console.log(po);
    po.map(d=>map=mu.setpos(map,d[0],d[1], mu.symbol.event)) //symbol
-   if(mu.is(sx)) map=mu.setpos(map,sx,sy, mu.symbol.upstair) //v2.0 upstair
-   if(mu.is(ex)) map=mu.setpos(map,ex,ey, mu.symbol.downstair) //v2.0 downstair
    ;
    for(var i=0,r=0;i<rmax;i++){
     let rp=mu.getroompoint(map,rand,w*h);
@@ -94,6 +92,10 @@
    let wallary=mu.getsymbolary(map,mu.symbol.wall).filter(d=>mu.iswallinwall(map,d[0],d[1]))
    wallary.map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.wallinwall)})
    ;
+   //finally must stair
+   if(mu.is(sx)) map=mu.setpos(map,sx,sy, mu.symbol.upstair) //v2.0 upstair
+   if(mu.is(ex)) map=mu.setpos(map,ex,ey, mu.symbol.downstair) //v2.0 downstair
+   //
     o.doorerrorcount+=faildoor.length //quality
     o.getquality();//quality
    return o.finishwork(map)
