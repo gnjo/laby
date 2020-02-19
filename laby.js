@@ -64,6 +64,7 @@
     let x=a[i+1]
     map=o.joinwalk(map,d[0],d[1],x[0],x[1],0,o.finerate,rand)
    })
+   console.log(po);
    po.map(d=>map=mu.setpos(map,d[0],d[1], mu.symbol.event)) //symbol
    if(mu.is(sx)) map=mu.setpos(map,sx,sy, mu.symbol.upstair) //v2.0 upstair
    if(mu.is(ex)) map=mu.setpos(map,ex,ey, mu.symbol.downstair) //v2.0 downstair
