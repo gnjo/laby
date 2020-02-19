@@ -25,6 +25,7 @@ v0.31 fix simple return. map[h][w]
 v0.32 fix quality info laby.getquality, 0-100 low to high
 v0.33 fix dont relation PI
 v0.40 cod how to do the roundabout way.
+v2.00 wallinwall is 8
 ```
 ```
 //pug
