@@ -71,18 +71,42 @@ o.mapjoin=(a,b,jx,jy)=>{
    a[y][x]=b[ y-jy ][ x-jx ]
  return a;
 }
-o.samemap=(a,b,jx,jy,cflg)=>{
+o.samemap=(a,b,jx,jy,cflg,fuzzyflg)=>{
  //* is wildcard,cflg is jx,jy is center. odd number only.
  let same=true/*1*/,h=b.length,w=b[0].length
+ ,ox=cflg?Math.floor(w/2):0,oy=cflg?Math.floor(h/2):0
+ ;
+ jx=jx-ox,jy=jy-oy
+ if(!fuzzyflg){//org
+  if(!o.ispos(a,jx+w-1,jy+h-1))return false;//0;//out of range
+  for(let y=jy;y<jy+h;y++)
+   for(let x=jx;x<jx+w;x++)
+    if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=false/*0*/;break}
+  return same;
+ }
+ //if(fuzzyflg)
+  //if(!o.ispos(a,jx+w-1,jy+h-1))return false;//0;//out of range
+  for(let y=jy;y<jy+h;y++)
+   for(let x=jx;x<jx+w;x++){
+    if(!o.ispos(a,x,y))continue;
+    if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=false/*0*/;break}
+   }
+  return same; 
+}
+/*
+o.samemap=(a,b,jx,jy,cflg)=>{
+ // * is wildcard,cflg is jx,jy is center. odd number only.
+ let same=true,h=b.length,w=b[0].length
  ,ox=cflg?Math.floor(w/2):0,oy=cflg?Math.floor(h/2):0
  ;
  jx=jx-ox,jy=jy-oy
  if(!o.ispos(a,jx+w-1,jy+h-1))return false;//0;//out of range
  for(let y=jy;y<jy+h;y++)
   for(let x=jx;x<jx+w;x++)
-   if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=false/*0*/;break}
+   if((b[y-jy][x-jx]!='*'&&a[y][x]!=b[y-jy][x-jx]) ){same=false;break} //0
  return same;
 }
+*/
 o.str2map=(str)=>{
  //trim
  return str.trim().split('\n').map(d=>d.split(''))
@@ -349,6 +373,16 @@ const vdoor=o.str2map(`
 o.iswelldonedoor=(map,cx,cy)=>{
  return [hdoor,vdoor].some(d=>o.samemap(map,d,cx,cy,1))
 }
+//v2.0
+const winw=o.str2map(`
+*0*
+000
+*0*
+`) 
+o.iswallinwall=(map,cx,cy)=>{
+ return [winw].some(d=>o.samemap(map,d,cx,cy,1,'fuzzy'))
+}
+
 //////////////////////
 o.lrot = a => a[0].map((_, c) => a.map(r => r[c]).reverse());
 o.rrot = a => a[0].map((_, c) => a.map(r => r[c])).reverse();
