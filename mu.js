@@ -44,7 +44,23 @@ let o={}
 o.is=(d)=>{return (d||d===0)?true:false}
 o.deep=d=>JSON.parse(JSON.stringify(d));
 o.clone=o.deep
-o.symbol={wall:"0",road:"1",door:"2",object:"3",event:"4"}
+ ///////////
+ //////////
+o.symbol={
+  wall:"0"
+ ,road:"1"
+ ,door:"2"
+ ,object:"3"
+ ,event:"4"
+ //v2.0
+ ,downstair:"5"
+ ,upstair:"6"
+ //7?
+ ,wallinwall:"8"
+ ,unfoot:"9"
+}
+///////////
+//////////
 o.genmap=(w,h,symbol)=>{
  return Array(w*h+1).join(symbol).match(new RegExp(".{"+w+"}","g")).map(d=>d.split(''))
 }
