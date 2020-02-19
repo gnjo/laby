@@ -1,4 +1,7 @@
 //history
+//sx sy symbol.upstair
+//ex ey symbol.downstair
+//wallinwall is 8
 ;(function(root){
  let mu=root.mu,shuffle=root.shuffle,xrand=root.xrand
  function entry(opts){
