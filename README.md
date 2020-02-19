@@ -133,6 +133,12 @@ road="1"
 door="2"
 object="3" //object is room object
 event="4" //join point
+
+downstair="5" //v2.0
+upstair="6" //v2.0
+wallinwall="8" //v2.0
+unfoot="9" //v2.0
+
 ```
 ![img](pi.png)
 
