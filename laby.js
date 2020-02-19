@@ -64,7 +64,7 @@
     let x=a[i+1]
     map=o.joinwalk(map,d[0],d[1],x[0],x[1],0,o.finerate,rand)
    })
-   console.log(po);
+   //console.log(po);
    po.map(d=>map=mu.setpos(map,d[0],d[1], mu.symbol.event)) //symbol
    if(mu.is(sx)) map=mu.setpos(map,sx,sy, mu.symbol.upstair) //v2.0 upstair
    if(mu.is(ex)) map=mu.setpos(map,ex,ey, mu.symbol.downstair) //v2.0 downstair
@@ -89,6 +89,10 @@
    //issue fail door recovery
    let faildoor=mu.getsymbolary(map,mu.symbol.door).filter(d=>!mu.iswelldonedoor(map,d[0],d[1]))
     faildoor.map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.road)})
+   ;
+   //wallinwall is 8
+   let wallary=mu.getsymbolary(map,mu.symbol.wall).filter(d=>mu.iswallinwall(map,d[0],d[1]))
+   wallary.map(d=>{map=mu.setpos(map,d[0],d[1],mu.symbol.wallinwall)})
    ;
     o.doorerrorcount+=faildoor.length //quality
     o.getquality();//quality
