@@ -52,7 +52,7 @@
   ////////////////////////
   o.gen=(seed,sx,sy,ex,ey)=>{
    o.gencount++;//quality
-   let f=(d)=>{return mu.is(d[0])?d:[]}
+   let f=(d)=>{return mu.is(d[0])?[d]:[]} //bug fix d>[d]
    ,rand=xrand(seed),w=o.size[0],h=o.size[1]
    ,po=[].concat(f([sx,sy]) )/*.concat(o.getep(w,h,rand))*/.concat(o.getrp(o.point,w,h,rand)).concat(f([ex,ey]) )
    ,map=mu.genmap(w,h,mu.symbol.wall)
