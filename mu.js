@@ -450,6 +450,9 @@ o.r2a=(_k,_v)=>{
    o.c=o.view[2][1]
    o.f=o.view[1][1]
    //
+  let f=(d)=>{return ('000'+d).slice(-2) }
+  o.addr='X'+f(o.x)+'Y'+f(o.y)+o.v
+   //
    //o.ispos=(map,x,y)
    o.maskmap[o.y][o.x]=o.c//
    if(o.v==='E'||o.v==='W'){
@@ -512,9 +515,11 @@ o.r2a=(_k,_v)=>{
    return o.maskmap
    ;
   }
+  o.getaddr=()=>{return o.addr}
+  
   o.getview=()=>{return o.view}
   //x,y,v,vo,c,f
-  o.getpos=()=>{return {x:o.x, y:o.y, v:o.v, vo:o.vo, c:o.c, f:o.f, view:o.view}}
+  o.getpos=()=>{return {x:o.x, y:o.y, v:o.v, vo:o.vo, c:o.c, f:o.f, view:o.view, addr:o.addr}}
   
   //
   o.update(0,0,'N')
